@@ -5,6 +5,16 @@
 * Manually collect data from online resources
 
 ((Markdown table))
+| Language | Google search count | 
+| -- | -- |
+| Javascript | 180,000 |
+| Python | 63,000 |
+| C |  |
+| Java |  |
+| Ruby | 100,000 |
+| Haskell | |
+| C++ | |
+| C# | |
 
 ## Top five
 
