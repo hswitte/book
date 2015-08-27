@@ -8,20 +8,20 @@
 
 The entirety of data that is collected/used/maintained by Amazon.com. This includes product inventory, user data, puchase history, Amazon Web Services, etc. 
 
-((a brief justification why this dataset is bigger than the next one))
+Amazon's data bigger than twitter's data because Amazon has a much larger variety of data, and in some instances, more complex data than twitter.
 
 ## Rank 2: twitter.com
 
 All tweet data contained by twitter. 
 
-((a brief justification why this dataset is bigger than the next one))
+Twitter's data is begger than the data of GoogleMaps, because Twitter's data is constantly growing, while the data contained in GoogleMaps is relatively unchanging and does not grow larger over time.
 
 ## Rank 3: maps.google.com
 
-(( a brief description of the dataset))
+The map data owned by Google; this includes both maps and images found in GoogleEarth.
 
-((a brief justification why this dataset is bigger than the next one))
+Google Map data is larger than a human genome because the data in GoogleMaps is primarily image data, which can be difficult to work with, and a human genome (i.e. nucleotide sequences) is relativley simple to store and manage with computers.  
 
-## Rank 4: the human genome (example: http://www.1000genomes.org/data)
+## Rank 4: the human genome (example: 1000genomes.org/data)
 
-(( a brief description of the dataset))
+The data contained in a single human genome.
