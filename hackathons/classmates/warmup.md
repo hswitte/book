@@ -10,7 +10,7 @@ The comments data is imported as `data.comments`.
 
 {% lodash %}
 // TODO: write code to answer this question
-return 25
+return _.size(data.comments)
 {% endlodash %}
 
 There are {{result}} submissions.
@@ -21,7 +21,8 @@ We can get the data of the first comment by
 
 {% lodash %}
 // TODO: use lodash's method instead of direct array access via [0]
-return data.comments[0]
+//return data.comments[0]
+return _.first(data.comments)
 {% endlodash %}
 
 The result is
@@ -43,12 +44,10 @@ The code to retrieve the data about the favorite food is (hint: use [split()](ht
 
 {% lodash %}
 var text = _.first(data.comments).body
-console.log(text)
-console.log(text.split('\n'))
-
+//console.log(text)
+//console.log(text.split('\n'))
 // TODO: add code to process text to get the person's favorite food
-
-return 'Sushi'
+return _.last(_.last(_.first(data.comments).body.split('\n')).split(':'))
 {% endlodash %}
 
 So, {{name}}'s favorite food is {{result}}.
