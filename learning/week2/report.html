@@ -37,8 +37,10 @@
         
     
     
+    <link rel="next" href="../../learning/week2/viz.html" />
     
-    <link rel="prev" href="../../hackathons/classmates/analysis.html" />
+    
+    <link rel="prev" href="../../learning/week2/index.html" />
     
 
         <!-- head:end -->
@@ -46,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.4" data-basepath="../.." data-revision="Fri Sep 04 2015 20:32:03 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.3.1" data-basepath="../.." data-revision="Fri Sep 04 2015 20:32:03 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -225,7 +227,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="learning/week2/report.html">
+        <li class="chapter active" data-level="1.3.1" data-path="learning/week2/report.html">
             
                 
                     <a href="../../learning/week2/report.html">
@@ -393,7 +395,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.2.4" data-path="hackathons/classmates/report.html">
+        <li class="chapter " data-level="2.2.4" data-path="hackathons/classmates/report.html">
             
                 
                     <a href="../../hackathons/classmates/report.html">
@@ -524,9 +526,9 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="report">Report</h1>
-<p>As a class, we brainstormed and came up with a long list of further questions we can ask based
-on the &quot;self-introduction&quot; data. Out of these questions, our team chose to tackle on
-the following:</p>
+<p>There are 26 students who gave a self-introduction. As a
+class, we brainstormed and came up with a long list of further questions we can
+ask based on this data. Our team chose to tackle on the following:</p>
 <h1 id="who-wrote-the-most-for-thier-comment">Who wrote the most for thier comment</h1>
 <p><pre>
 <span class="keyword">return</span> _.pluck(_.sortBy(data.comments, <span class="keyword">function</span>(comment){
@@ -534,7 +536,7 @@ the following:</p>
         }).reverse(), <span class="string">&apos;user.login&apos;</span>);
 
 </pre></p>
-<pre>[
+<p>In order from most verbose comment to least: <pre>[
  &quot;Linenfelser&quot;,
  &quot;nicolele&quot;,
  &quot;94kazakov&quot;,
@@ -561,25 +563,23 @@ the following:</p>
  &quot;fadhilfath&quot;,
  &quot;Malaokia&quot;,
  &quot;anbe6083&quot;
-]</pre>
-
+]</pre></p>
 <h1 id="which-student-has-been-a-member-of-github-the-longest">Which student has been a member of GitHub the longest?</h1>
 <p>(This assumes that userIDs were assigned consecutively)</p>
 <p><pre>
 <span class="keyword">return</span> _.first(_.pluck(_.sortBy((_.pluck((data.comments), <span class="string">&quot;user&quot;</span>)), <span class="string">&quot;id&quot;</span>), <span class="string">&quot;login&quot;</span>))
-</pre>
-Result is <pre>&quot;willzfarmer&quot;</pre></p>
+</pre></p>
+<p>Assuming that GitHub userIDs are assigned sequentially, <pre>&quot;willzfarmer&quot;</pre> has been a member of github the longest.</p>
 <h1 id="who-has-updated-their-comment">Who has updated their comment?</h1>
 <p><pre>
 <span class="keyword">return</span> _.pluck(_.filter(data.comments, <span class="keyword">function</span>(comment){
     <span class="keyword">return</span> comment[<span class="string">&apos;created_at&apos;</span>] !== comment[<span class="string">&apos;updated_at&apos;</span>];
 }), <span class="string">&apos;user.login&apos;</span>);
 </pre></p>
-<pre>[
+<p>The students who have updated their comments are: <pre>[
  &quot;KevinKGifford&quot;,
  &quot;kjblakemore&quot;
-]</pre>
-
+]</pre></p>
 <h1 id="who-uses-the-most-punctuation">Who uses the most punctuation?</h1>
 <p><pre>
 <span class="keyword">return</span> _.chain(data.comments)
@@ -594,7 +594,7 @@ Result is <pre>&quot;willzfarmer&quot;</pre></p>
         <span class="keyword">return</span> tup[<span class="number">0</span>];
     })
 </pre></p>
-<p>Results sorted least to most.</p>
+<p>In order of least punctuation used to most:</p>
 <pre>[
  &quot;twagar95&quot;,
  &quot;Malaokia&quot;,
@@ -633,8 +633,10 @@ Result is <pre>&quot;willzfarmer&quot;</pre></p>
         </div>
 
         
-        <a href="../../hackathons/classmates/analysis.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Analysis"><i class="fa fa-angle-left"></i></a>
+        <a href="../../learning/week2/index.html" class="navigation navigation-prev " aria-label="Previous page: Week 2"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../../learning/week2/viz.html" class="navigation navigation-next " aria-label="Next page: Tableau Viz"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
