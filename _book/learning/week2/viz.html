@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Report | book</title>
+        <title>Tableau Viz | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -37,8 +37,10 @@
         
     
     
+    <link rel="next" href="../../hackathons/index.html" />
     
-    <link rel="prev" href="../../hackathons/classmates/analysis.html" />
+    
+    <link rel="prev" href="../../learning/week2/report.html" />
     
 
         <!-- head:end -->
@@ -46,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.4" data-basepath="../.." data-revision="Fri Sep 04 2015 20:32:03 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.3.2" data-basepath="../.." data-revision="Fri Sep 04 2015 20:32:03 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -240,7 +242,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="learning/week2/viz.html">
+        <li class="chapter active" data-level="1.3.2" data-path="learning/week2/viz.html">
             
                 
                     <a href="../../learning/week2/viz.html">
@@ -393,7 +395,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.2.4" data-path="hackathons/classmates/report.html">
+        <li class="chapter " data-level="2.2.4" data-path="hackathons/classmates/report.html">
             
                 
                     <a href="../../hackathons/classmates/report.html">
@@ -523,106 +525,37 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="report">Report</h1>
-<p>As a class, we brainstormed and came up with a long list of further questions we can ask based
-on the &quot;self-introduction&quot; data. Out of these questions, our team chose to tackle on
-the following:</p>
-<h1 id="who-wrote-the-most-for-thier-comment">Who wrote the most for thier comment</h1>
-<p><pre>
-<span class="keyword">return</span> _.pluck(_.sortBy(data.comments, <span class="keyword">function</span>(comment){
-        <span class="keyword">return</span> _.size(comment.body.split(<span class="string">&quot;&quot;</span>));
-        }).reverse(), <span class="string">&apos;user.login&apos;</span>);
-
-</pre></p>
-<pre>[
- &quot;Linenfelser&quot;,
- &quot;nicolele&quot;,
- &quot;94kazakov&quot;,
- &quot;pail4944&quot;,
- &quot;karisantos&quot;,
- &quot;sumi6109&quot;,
- &quot;willzfarmer&quot;,
- &quot;KevinKGifford&quot;,
- &quot;zhya215&quot;,
- &quot;boanding&quot;,
- &quot;calebhsu&quot;,
- &quot;satchelspencer&quot;,
- &quot;co-bri&quot;,
- &quot;DomoYeti&quot;,
- &quot;hswitte&quot;,
- &quot;kjblakemore&quot;,
- &quot;twagar95&quot;,
- &quot;jocr1627&quot;,
- &quot;SankethSukumarShetty&quot;,
- &quot;tiro6090&quot;,
- &quot;ZachLamb&quot;,
- &quot;AndreyShprengel&quot;,
- &quot;drewdinger&quot;,
- &quot;fadhilfath&quot;,
- &quot;Malaokia&quot;,
- &quot;anbe6083&quot;
-]</pre>
-
-<h1 id="which-student-has-been-a-member-of-github-the-longest">Which student has been a member of GitHub the longest?</h1>
-<p>(This assumes that userIDs were assigned consecutively)</p>
-<p><pre>
-<span class="keyword">return</span> _.first(_.pluck(_.sortBy((_.pluck((data.comments), <span class="string">&quot;user&quot;</span>)), <span class="string">&quot;id&quot;</span>), <span class="string">&quot;login&quot;</span>))
-</pre>
-Result is <pre>&quot;willzfarmer&quot;</pre></p>
-<h1 id="who-has-updated-their-comment">Who has updated their comment?</h1>
-<p><pre>
-<span class="keyword">return</span> _.pluck(_.filter(data.comments, <span class="keyword">function</span>(comment){
-    <span class="keyword">return</span> comment[<span class="string">&apos;created_at&apos;</span>] !== comment[<span class="string">&apos;updated_at&apos;</span>];
-}), <span class="string">&apos;user.login&apos;</span>);
-</pre></p>
-<pre>[
- &quot;KevinKGifford&quot;,
- &quot;kjblakemore&quot;
-]</pre>
-
-<h1 id="who-uses-the-most-punctuation">Who uses the most punctuation?</h1>
-<p><pre>
-<span class="keyword">return</span> _.chain(data.comments)
-    .map(<span class="keyword">function</span>(obj) {
-        <span class="keyword">return</span> [obj.user.login,
-                obj.body.match(/[`~!@<span class="comment">#\$%\^&amp;\*\(\)_\+-=\[\]\\\{\}\|;&apos;:&quot;,\./&lt;&gt;\?]/g).length];</span>
-    })
-    .sortBy(<span class="keyword">function</span>(tup) {
-        <span class="keyword">return</span> tup[<span class="number">1</span>];
-    })
-    .map(<span class="keyword">function</span>(tup) {
-        <span class="keyword">return</span> tup[<span class="number">0</span>];
-    })
-</pre></p>
-<p>Results sorted least to most.</p>
-<pre>[
- &quot;twagar95&quot;,
- &quot;Malaokia&quot;,
- &quot;fadhilfath&quot;,
- &quot;hswitte&quot;,
- &quot;ZachLamb&quot;,
- &quot;jocr1627&quot;,
- &quot;drewdinger&quot;,
- &quot;tiro6090&quot;,
- &quot;calebhsu&quot;,
- &quot;sumi6109&quot;,
- &quot;SankethSukumarShetty&quot;,
- &quot;AndreyShprengel&quot;,
- &quot;anbe6083&quot;,
- &quot;willzfarmer&quot;,
- &quot;nicolele&quot;,
- &quot;kjblakemore&quot;,
- &quot;co-bri&quot;,
- &quot;zhya215&quot;,
- &quot;94kazakov&quot;,
- &quot;Linenfelser&quot;,
- &quot;pail4944&quot;,
- &quot;DomoYeti&quot;,
- &quot;boanding&quot;,
- &quot;KevinKGifford&quot;,
- &quot;karisantos&quot;,
- &quot;satchelspencer&quot;
-]</pre>
+                        <h1 id="tableau-visualization">Tableau Visualization</h1>
+<p>Tableau is arguably the biggest deal now in terms of data visualization for non-programmers.
+Let&apos;s pretend you are not a programer. Learn and experience what it is like to make
+visualizations using Tableau to answer the same questions about your classmates in our course.</p>
+<p>For each of the question, think about what chart you should use to convey your answer and
+make your best effort to create something that makes sense to you. There&apos;s no right
+or wrong. When we meet in the class again, we will set aside time for each team to discuss
+and compare the variety of visualization solutions each member has come up with for the
+same set of questions. It will be fun!</p>
+<p>To include a Tableau visualization in your report, take a screenshot, save it as an image,
+put it in the <code>learning/week2</code> folder, and replace <code>![screenshot](screenshot.png)</code>  with
+your own image. Please makes sure your screenshot includes the <em>entire</em> Tableau interface
+including the controls, widgets ...etc.</p>
+<h1 id="how-big-the-deal-tableau-really-is">How big the deal Tableau really is?</h1>
+<p>(write your answer based on the statistics you can find online)</p>
+<h1 id="-question-1">(Question 1)</h1>
+<p><img src="screenshot.png" alt="screenshot"></p>
+<p>(write your explanation for the reader as to where to look at this chart in order
+    to see the answer)</p>
+<h1 id="-question-2">(Question 2)</h1>
+<p><img src="screenshot.png" alt="screenshot"></p>
+<p>(write your explanation for the reader as to where to look at this chart in order
+    to see the answer)</p>
+<h1 id="-question-3">(Question 3)</h1>
+<p><img src="screenshot.png" alt="screenshot"></p>
+<p>(write your explanation for the reader as to where to look at this chart in order
+    to see the answer)</p>
+<h1 id="-question-4">(Question 4)</h1>
+<p><img src="screenshot.png" alt="screenshot"></p>
+<p>(write your explanation for the reader as to where to look at this chart in order
+    to see the answer)</p>
 
                     
                     </section>
@@ -633,8 +566,10 @@ Result is <pre>&quot;willzfarmer&quot;</pre></p>
         </div>
 
         
-        <a href="../../hackathons/classmates/analysis.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Analysis"><i class="fa fa-angle-left"></i></a>
+        <a href="../../learning/week2/report.html" class="navigation navigation-prev " aria-label="Previous page: Report"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../../hackathons/index.html" class="navigation navigation-next " aria-label="Next page: Hackathons"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

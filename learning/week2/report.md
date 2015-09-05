@@ -6,34 +6,53 @@ There are {{ data.comments.length }} students who gave a self-introduction. As a
 class, we brainstormed and came up with a long list of further questions we can
 ask based on this data. Our team chose to tackle on the following:
 
-# (Question 1)
+
+# Who wrote the most for thier comment?
 
 {% lodash %}
-return "[answer]"
+return _.pluck(_.sortBy(data.comments, function(comment){
+		return _.size(comment.body.split(""));
+		}).reverse(), 'user.login');
+
 {% endlodash %}
 
-(writeup)
+In order from most verbose comment to least: {{result | json}}
 
-# (Question 2)
+# Which student has been a member of GitHub the longest?
+(This assumes that userIDs were assigned consecutively)
 
 {% lodash %}
-return "[answer]"
+return _.first(_.pluck(_.sortBy((_.pluck((data.comments), "user")), "id"), "login"))
 {% endlodash %}
 
-(writeup)
+Assuming that GitHub userIDs are assigned sequentially, {{result | json}} has been a member of github the longest.
 
-# (Question 3)
+# Who has updated their comment?
 
 {% lodash %}
-return "[answer]"
+return _.pluck(_.filter(data.comments, function(comment){
+	return comment['created_at'] !== comment['updated_at'];
+}), 'user.login');
 {% endlodash %}
 
-(writeup)
+The students who have updated their comments are: {{result | json}}
 
-# (Question 4)
+# Who uses the most punctuation?
 
 {% lodash %}
-return "[answer]"
+return _.chain(data.comments)
+    .map(function(obj) {
+        return [obj.user.login,
+                obj.body.match(/[`~!@#\$%\^&\*\(\)_\+-=\[\]\\\{\}\|;':",\./<>\?]/g).length];
+    })
+    .sortBy(function(tup) {
+        return tup[1];
+    })
+    .map(function(tup) {
+        return tup[0];
+    })
 {% endlodash %}
 
-(writeup)
+In order of least punctuation used to most:
+
+{{ result | json }}
