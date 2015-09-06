@@ -10,9 +10,11 @@ ask based on this data. Our team chose to tackle on the following:
 # Who wrote the most for thier comment?
 
 {% lodash %}
+
 return _.pluck(_.sortBy(data.comments, function(comment){
 		return _.size(comment.body.split(""));
 		}).reverse(), 'user.login');
+
 
 {% endlodash %}
 

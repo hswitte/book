@@ -17,32 +17,28 @@ including the controls, widgets ...etc.
 
 # How big the deal Tableau really is?
 
-(write your answer based on the statistics you can find online)
+According to an article from Forbes (http://www.forbes.com/sites/greatspeculations/2015/04/15/a-closer-look-at-tableaus-customer-base-growth/), Tableau's customer base grew nearly 6x in size from 2010 to 2014. Additionally, the customer base for analytics software is expected to continue growing very rapidly, further the demand for tools such as Tableau. 
 
-# (Question 1)
+# Who wrote the most for thier comment?
 
-![screenshot](screenshot.png)
+![screenshot](comment_length.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+This is a visualization of the length of comments made by students. Each comment is represented by a vertical line on the graph. This visualization makes it easy to see the distribution of comment length made by various students. 
 
-# (Question 2)
+# Which student has been a member of GitHub the longest?
 
-![screenshot](screenshot.png)
+![screenshot](githubID.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+This is a visualization of each student's github userID. Each student is represented by a vertical line on the graph. Assuming that github userIDs are assigned sequentially, this is a visual representation of the time at which the students chose to adopt github. You can see that this class has a couple of relatively early github adopters, and that there are a couple of cases where student adoption of github more clustered.
 
-# (Question 3)
+# Who has updated their comment?
 
-![screenshot](screenshot.png)
+![screenshot](updated.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+This visualization is a list of github usernames. The box to the right of each student's name is larger if they updated their comment.
 
-# (Question 4)
+# Who uses the most punctuation?
 
-![screenshot](screenshot.png)
+![screenshot](punctuation.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+This visualizes the number of students who used a particular number of punctuation marks in their comment. The larger and darker the box, the more frequently that particular number of punctuation marks was used by students in the class. For example, the large, dark green box represents students who used 4 punctuation marks in their comment; the large size and dark color indicates that the vast majority of students in the class used exactly 4 punctuation marks in their comment.
