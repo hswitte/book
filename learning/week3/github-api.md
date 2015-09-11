@@ -110,11 +110,20 @@ https://api.github.com/users/doubleshow/repos
 
 {% lodash %}
 // add lodash code to process the data and generate the answer
-return data.length
+return _.pluck(_.where(data, {"private":false}), "private").length
 {% endlodash %}
+
+{{result | json}}
+
+### How many public gists does the user `doubleshow` have?
+{% githubapi %}
+https://api.github.com/users/doubleshow/gists
+{% endgithubapi %}
 
 {{data | json}}
 
-### How many public gists does the user `doubleshow` have?
+{% lodash %}
+return _.pluck(_.where(data, {"public":true}), "public").length
+{% endlodash %}
 
-(answer)
+{{result | json}}
