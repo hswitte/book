@@ -38,3 +38,10 @@ return "[answer]"
 {% lodash %}
 return "[answer]"
 {% endlodash %}
+
+
+what class hands out As? (avg_grd > 3.0 vs. avg_grd < 3.0)
+what major is most rewarding (rating of upper division - lower division)
+correlation of grades & quality of professor
+do a dept's instructors suck compared to profs in other depts?
+what should major be if you want high gpa?
