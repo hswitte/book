@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.5.1" data-basepath="../.." data-revision="Thu Sep 17 2015 17:09:20 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.5.1" data-basepath="../.." data-revision="Fri Sep 18 2015 18:56:51 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -837,22 +837,390 @@ Coming up, we will incorporate variations of these questions into a future hacka
 }</pre>
 
 
-<h1 id="-question-2-by-name">(Question 2) by (Name)</h1>
+<h1 id="what-should-my-major-be-if-i-want-have-a-high-gpa-by-andrey-shprengel">What should my major be if I want have a high gpa by Andrey Shprengel</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
+<span class="keyword">var</span> grps = _.groupBy(data, <span class="keyword">function</span>(c){<span class="keyword">return</span> c.Subject})
+<span class="keyword">var</span> grades = _.mapValues(grps, <span class="keyword">function</span>(grp){<span class="keyword">return</span> _.compact(_.pluck(grp, <span class="string">&apos;AVG_GRD&apos;</span>))})
+
+<span class="keyword">var</span> grades = _.mapValues(grades, <span class="keyword">function</span>(group){
+    <span class="keyword">var</span> total = <span class="number">0</span>
+    _.map(group, <span class="keyword">function</span>(n){
+            <span class="comment">//console.log()</span>
+            total += n
+            <span class="keyword">return</span> total
+                }
+                )
+                <span class="keyword">return</span> total/(_.size(group))})
+grades = _.map(grades, <span class="keyword">function</span>(value, key){
+    <span class="keyword">return</span> {<span class="string">&quot;subject&quot;</span>: key, <span class="string">&quot;grade&quot;</span>:value}})
+<span class="keyword">return</span> _.sortBy(grades, <span class="string">&quot;grade&quot;</span>).reverse()
 </pre></p>
-<h1 id="-question-3-by-name">(Question 3) by (Name)</h1>
-<p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
-</pre></p>
-<h1 id="-question-4-by-name">(Question 4) by (Name)</h1>
-<p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
-</pre></p>
-<h1 id="-question-5-by-name">(Question 5) by (Name)</h1>
-<p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
-</pre></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">[
+ {
+  &quot;subject&quot;: &quot;CSVC&quot;,
+  &quot;grade&quot;: null
+ },
+ {
+  &quot;subject&quot;: &quot;TMUS&quot;,
+  &quot;grade&quot;: null
+ },
+ {
+  &quot;subject&quot;: &quot;CONV&quot;,
+  &quot;grade&quot;: null
+ },
+ {
+  &quot;subject&quot;: &quot;MUSM&quot;,
+  &quot;grade&quot;: 3.946
+ },
+ {
+  &quot;subject&quot;: &quot;EMUS&quot;,
+  &quot;grade&quot;: 3.923809523809524
+ },
+ {
+  &quot;subject&quot;: &quot;KREN&quot;,
+  &quot;grade&quot;: 3.9166666666666665
+ },
+ {
+  &quot;subject&quot;: &quot;EHON&quot;,
+  &quot;grade&quot;: 3.8840000000000003
+ },
+ {
+  &quot;subject&quot;: &quot;HONR&quot;,
+  &quot;grade&quot;: 3.8329999999999997
+ },
+ {
+  &quot;subject&quot;: &quot;EDUC&quot;,
+  &quot;grade&quot;: 3.773880597014925
+ },
+ {
+  &quot;subject&quot;: &quot;FRSI&quot;,
+  &quot;grade&quot;: 3.75
+ },
+ {
+  &quot;subject&quot;: &quot;PRLC&quot;,
+  &quot;grade&quot;: 3.75
+ },
+ {
+  &quot;subject&quot;: &quot;PMUS&quot;,
+  &quot;grade&quot;: 3.7189285714285716
+ },
+ {
+  &quot;subject&quot;: &quot;MILR&quot;,
+  &quot;grade&quot;: 3.715555555555556
+ },
+ {
+  &quot;subject&quot;: &quot;AIRR&quot;,
+  &quot;grade&quot;: 3.6816666666666666
+ },
+ {
+  &quot;subject&quot;: &quot;INVS&quot;,
+  &quot;grade&quot;: 3.6772727272727277
+ },
+ {
+  &quot;subject&quot;: &quot;NAVR&quot;,
+  &quot;grade&quot;: 3.6722222222222225
+ },
+ {
+  &quot;subject&quot;: &quot;EVEN&quot;,
+  &quot;grade&quot;: 3.665
+ },
+ {
+  &quot;subject&quot;: &quot;TLEN&quot;,
+  &quot;grade&quot;: 3.657916666666667
+ },
+ {
+  &quot;subject&quot;: &quot;EMEN&quot;,
+  &quot;grade&quot;: 3.6478260869565218
+ },
+ {
+  &quot;subject&quot;: &quot;HUEN&quot;,
+  &quot;grade&quot;: 3.6348648648648645
+ },
+ {
+  &quot;subject&quot;: &quot;BADM&quot;,
+  &quot;grade&quot;: 3.597
+ },
+ {
+  &quot;subject&quot;: &quot;MBAX&quot;,
+  &quot;grade&quot;: 3.5700000000000003
+ },
+ {
+  &quot;subject&quot;: &quot;CWCV&quot;,
+  &quot;grade&quot;: 3.57
+ },
+ {
+  &quot;subject&quot;: &quot;DNCE&quot;,
+  &quot;grade&quot;: 3.566612903225807
+ },
+ {
+  &quot;subject&quot;: &quot;ATLS&quot;,
+  &quot;grade&quot;: 3.535681818181818
+ },
+ {
+  &quot;subject&quot;: &quot;ARTS&quot;,
+  &quot;grade&quot;: 3.5344230769230762
+ },
+ {
+  &quot;subject&quot;: &quot;RSEI&quot;,
+  &quot;grade&quot;: 3.5300000000000002
+ },
+ {
+  &quot;subject&quot;: &quot;GEEN&quot;,
+  &quot;grade&quot;: 3.504761904761904
+ },
+ {
+  &quot;subject&quot;: &quot;ASEN&quot;,
+  &quot;grade&quot;: 3.4920833333333348
+ },
+ {
+  &quot;subject&quot;: &quot;MUSC&quot;,
+  &quot;grade&quot;: 3.473297872340425
+ },
+ {
+  &quot;subject&quot;: &quot;CVEN&quot;,
+  &quot;grade&quot;: 3.4629870129870133
+ },
+ {
+  &quot;subject&quot;: &quot;CSCI&quot;,
+  &quot;grade&quot;: 3.459206349206347
+ },
+ {
+  &quot;subject&quot;: &quot;ENVS&quot;,
+  &quot;grade&quot;: 3.4509999999999996
+ },
+ {
+  &quot;subject&quot;: &quot;ARSC&quot;,
+  &quot;grade&quot;: 3.42875
+ },
+ {
+  &quot;subject&quot;: &quot;LDSP&quot;,
+  &quot;grade&quot;: 3.4250000000000003
+ },
+ {
+  &quot;subject&quot;: &quot;SLHS&quot;,
+  &quot;grade&quot;: 3.406857142857143
+ },
+ {
+  &quot;subject&quot;: &quot;LING&quot;,
+  &quot;grade&quot;: 3.4019354838709677
+ },
+ {
+  &quot;subject&quot;: &quot;LAWS&quot;,
+  &quot;grade&quot;: 3.4013333333333327
+ },
+ {
+  &quot;subject&quot;: &quot;CESR&quot;,
+  &quot;grade&quot;: 3.3971428571428572
+ },
+ {
+  &quot;subject&quot;: &quot;GSAP&quot;,
+  &quot;grade&quot;: 3.393333333333333
+ },
+ {
+  &quot;subject&quot;: &quot;JOUR&quot;,
+  &quot;grade&quot;: 3.384687499999998
+ },
+ {
+  &quot;subject&quot;: &quot;FILM&quot;,
+  &quot;grade&quot;: 3.3837499999999987
+ },
+ {
+  &quot;subject&quot;: &quot;ENGL&quot;,
+  &quot;grade&quot;: 3.381199999999998
+ },
+ {
+  &quot;subject&quot;: &quot;HEBR&quot;,
+  &quot;grade&quot;: 3.3720000000000008
+ },
+ {
+  &quot;subject&quot;: &quot;LEAD&quot;,
+  &quot;grade&quot;: 3.36
+ },
+ {
+  &quot;subject&quot;: &quot;ETHN&quot;,
+  &quot;grade&quot;: 3.359545454545455
+ },
+ {
+  &quot;subject&quot;: &quot;COMR&quot;,
+  &quot;grade&quot;: 3.356666666666667
+ },
+ {
+  &quot;subject&quot;: &quot;ENVD&quot;,
+  &quot;grade&quot;: 3.3503448275862073
+ },
+ {
+  &quot;subject&quot;: &quot;NRSC&quot;,
+  &quot;grade&quot;: 3.346470588235294
+ },
+ {
+  &quot;subject&quot;: &quot;ATOC&quot;,
+  &quot;grade&quot;: 3.334000000000001
+ },
+ {
+  &quot;subject&quot;: &quot;MCDB&quot;,
+  &quot;grade&quot;: 3.332346938775511
+ },
+ {
+  &quot;subject&quot;: &quot;MUEL&quot;,
+  &quot;grade&quot;: 3.3315909090909104
+ },
+ {
+  &quot;subject&quot;: &quot;LIBB&quot;,
+  &quot;grade&quot;: 3.3200000000000003
+ },
+ {
+  &quot;subject&quot;: &quot;THTR&quot;,
+  &quot;grade&quot;: 3.314242424242425
+ },
+ {
+  &quot;subject&quot;: &quot;NRLN&quot;,
+  &quot;grade&quot;: 3.31
+ },
+ {
+  &quot;subject&quot;: &quot;MBAC&quot;,
+  &quot;grade&quot;: 3.308333333333333
+ },
+ {
+  &quot;subject&quot;: &quot;AREN&quot;,
+  &quot;grade&quot;: 3.30695652173913
+ },
+ {
+  &quot;subject&quot;: &quot;MGMT&quot;,
+  &quot;grade&quot;: 3.2863157894736834
+ },
+ {
+  &quot;subject&quot;: &quot;MCEN&quot;,
+  &quot;grade&quot;: 3.283908045977012
+ },
+ {
+  &quot;subject&quot;: &quot;IAFS&quot;,
+  &quot;grade&quot;: 3.2694999999999994
+ },
+ {
+  &quot;subject&quot;: &quot;FARR&quot;,
+  &quot;grade&quot;: 3.2638461538461536
+ },
+ {
+  &quot;subject&quot;: &quot;JPNS&quot;,
+  &quot;grade&quot;: 3.261875
+ },
+ {
+  &quot;subject&quot;: &quot;BAKR&quot;,
+  &quot;grade&quot;: 3.2566666666666664
+ },
+ {
+  &quot;subject&quot;: &quot;WRTG&quot;,
+  &quot;grade&quot;: 3.2564179104477615
+ },
+ {
+  &quot;subject&quot;: &quot;CHEN&quot;,
+  &quot;grade&quot;: 3.252083333333333
+ },
+ {
+  &quot;subject&quot;: &quot;CLAS&quot;,
+  &quot;grade&quot;: 3.2325925925925922
+ },
+ {
+  &quot;subject&quot;: &quot;HUMN&quot;,
+  &quot;grade&quot;: 3.215882352941177
+ },
+ {
+  &quot;subject&quot;: &quot;CHIN&quot;,
+  &quot;grade&quot;: 3.214
+ },
+ {
+  &quot;subject&quot;: &quot;BSLW&quot;,
+  &quot;grade&quot;: 3.2100000000000004
+ },
+ {
+  &quot;subject&quot;: &quot;ARTH&quot;,
+  &quot;grade&quot;: 3.2061538461538457
+ },
+ {
+  &quot;subject&quot;: &quot;HIND&quot;,
+  &quot;grade&quot;: 3.2
+ },
+ {
+  &quot;subject&quot;: &quot;GEOG&quot;,
+  &quot;grade&quot;: 3.1867857142857132
+ },
+ {
+  &quot;subject&quot;: &quot;ECEN&quot;,
+  &quot;grade&quot;: 3.1852238805970154
+ },
+ {
+  &quot;subject&quot;: &quot;ANTH&quot;,
+  &quot;grade&quot;: 3.1845283018867936
+ },
+ {
+  &quot;subject&quot;: &quot;FREN&quot;,
+  &quot;grade&quot;: 3.1663333333333328
+ },
+ {
+  &quot;subject&quot;: &quot;RLST&quot;,
+  &quot;grade&quot;: 3.161666666666667
+ },
+ {
+  &quot;subject&quot;: &quot;RUSS&quot;,
+  &quot;grade&quot;: 3.1587499999999995
+ },
+ {
+  &quot;subject&quot;: &quot;ASTR&quot;,
+  &quot;grade&quot;: 3.154347826086956
+ },
+ {
+  &quot;subject&quot;: &quot;GEOL&quot;,
+  &quot;grade&quot;: 3.1308108108108113
+ },
+ {
+  &quot;subject&quot;: &quot;WMST&quot;,
+  &quot;grade&quot;: 3.1286206896551736
+ },
+ {
+  &quot;subject&quot;: &quot;ARAB&quot;,
+  &quot;grade&quot;: 3.128
+ },
+ {
+  &quot;subject&quot;: &quot;SEWL&quot;,
+  &quot;grade&quot;: 3.1199999999999997
+ },
+ {
+  &quot;subject&quot;: &quot;PSYC&quot;,
+  &quot;grade&quot;: 3.113559322033898
+ },
+ {
+  &quot;subject&quot;: &quot;ESBM&quot;,
+  &quot;grade&quot;: 3.110416666666666
+ },
+ {
+  &quot;subject&quot;: &quot;PACS&quot;,
+  &quot;grade&quot;: 3.1075
+ },
+ {
+  &quot;subject&quot;: &quot;PSCI&quot;,
+  &quot;grade&quot;: 3.106752136752137
+ },
+ {
+  &quot;subject&quot;: &quot;REAL&quot;,
+  &quot;grade&quot;: 3.102727272727273
+ },
+ {
+  &quot;subject&quot;: &quot;SPAN&quot;,
+  &quot;grade&quot;: 3.0959259259259273
+ },
+ {
+  &quot;subject&quot;: &quot;HIST&quot;,
+  &quot;grade&quot;: 3.090897435897436
+ },
+ {
+  &quot;subject&quot;: &quot;EBIO&quot;,
+  &quot;grade&quot;: 3.058318584070797
+ },
+ {
+  &quot;subject&quot;: &quot;MKTG&quot;,
+  &quot;grade&quot;: 3</pre>
+
+
 
                     
                     </section>
