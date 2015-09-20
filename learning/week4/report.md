@@ -28,6 +28,10 @@ var myvar =  _.mapValues(grps, function(group){
     })
     return rating[0]/rating[1]
 })
+//return myvar
+var myvar = _.mapValues(grps, function(group){
+	return group.AvgCourse	
+})
 return myvar
 {% endlodash %}
 
@@ -56,4 +60,41 @@ return _.sortBy(grades, "grade").reverse()
 
 {{result | json}}
 
+# What professors should be fired? by Will Farmer
 
+If the professor has a rating less than two standard deviations away, he's not
+a good one.
+
+{% lodash %}
+var professors =  _.chain(data)
+        .map(function(obj) {
+            return _.map(obj.Instructors, function(inst) {
+                return {"name": inst.name,
+                        "rating": obj.AvgInstructor}
+            })
+        }).flatten()
+        .filter(function(obj) {
+            return obj.rating;
+        })
+        .value();
+var rating_avg = _.reduce(professors, function(p, n) {
+            return (p + n.rating);
+        }, 0) / professors.length;
+var rating_stddev = Math.sqrt(_.reduce(professors, function(p, n) {
+            return (p + Math.pow(n.rating - rating_avg, 2));
+        }, 0) / professors.length);
+return [rating_avg, rating_stddev,
+     _.chain(professors)
+            .filter(function(obj) {
+                return (obj.rating < (rating_avg - (2 * rating_stddev)));
+            }).map(function(obj) {
+                return obj.name + ", " + obj.rating.toString();
+            }).uniq()
+            .value()];
+{% endlodash %}
+
+Average professor rating is: {{ result[0] }}.
+
+Standard Deviation is: {{ result[1] }}.
+
+{{ result[2] | json}}

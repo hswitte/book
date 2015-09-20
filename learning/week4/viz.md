@@ -19,37 +19,21 @@ how to transform this JSON file into a format that can be fed into Tableau. As
 a junior and senior, you are expected to be able to look around the Internet
 to problem solve.
 
-# (Question 1)
+# What is the average course rating by department? by Heather Witte
 
-![screenshot](screenshot.png)
+![screenshot](ratings.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+In this visualization, departments with higher course ratings on average appear in dark boxes, while departments with lower course ratings are in lighter boxes.
 
-# (Question 2)
+#What should my major be if I want have a high gpa by Andrey Shprengel
 
-![screenshot](screenshot.png)
+![screenshot](grades.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+In this visualization, departments that give out higher grades on average appear in dark boxes, while departments that give out lower grades are in lighter boxes.
 
-# (Question 3)
+# What professors should be fired? by Will Farmer
 
-![screenshot](screenshot.png)
+![screenshot](teachers.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
-
-# (Question 4)
-
-![screenshot](screenshot.png)
-
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
-
-# (Question 5)
-
-![screenshot](screenshot.png)
-
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)    
+This bar chart shows ratings for professors with ratings more than 2 standard deviations below average.
+(Note: there are many more professors with low ratings, but the chart got cut-off when taking a screenshot) 
