@@ -28,11 +28,8 @@ var myvar =  _.mapValues(grps, function(group){
     })
     return rating[0]/rating[1]
 })
-//return myvar
-var myvar = _.mapValues(grps, function(group){
-	return group.AvgCourse	
-})
 return myvar
+
 {% endlodash %}
 
 {{result | json}}
@@ -98,3 +95,5 @@ Average professor rating is: {{ result[0] }}.
 Standard Deviation is: {{ result[1] }}.
 
 {{ result[2] | json}}
+
+ 

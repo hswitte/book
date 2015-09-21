@@ -29,6 +29,10 @@
         
     
         
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+        
+    
+        
         <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
         
     
@@ -48,7 +52,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.3.1" data-basepath="../.." data-revision="Sun Sep 20 2015 12:58:41 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.3.1" data-basepath="../.." data-revision="Mon Sep 21 2015 16:42:29 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -379,6 +383,72 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="learning/week5/index.html">
+            
+                
+                    <a href="../../learning/week5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Week 5
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="learning/week5/birdstrike-report.html">
+            
+                
+                    <a href="../../learning/week5/birdstrike-report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.1.</b>
+                        
+                        Birdstrike Report
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="learning/week5/viz-steps.html">
+            
+                
+                    <a href="../../learning/week5/viz-steps.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.2.</b>
+                        
+                        Viz Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="learning/week5/viz-drills.html">
+            
+                
+                    <a href="../../learning/week5/viz-drills.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.3.</b>
+                        
+                        Viz Drills
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -583,6 +653,42 @@
             
         </li>
     
+        <li class="chapter " data-level="2.4" data-path="hackathons/birdstrikes/index.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Birdstrikes
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="hackathons/birdstrikes/report.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        Report
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -698,14 +804,9 @@
 class, we brainstormed and came up with a long list of further questions we can
 ask based on this data. Our team chose to tackle on the following:</p>
 <h1 id="who-wrote-the-most-for-thier-comment">Who wrote the most for thier comment?</h1>
-<p><pre>
-
-<span class="keyword">return</span> _.pluck(_.sortBy(data.comments, <span class="keyword">function</span>(comment){
-        <span class="keyword">return</span> _.size(comment.body.split(<span class="string">&quot;&quot;</span>));
-        }).reverse(), <span class="string">&apos;user.login&apos;</span>);
-
-
-</pre></p>
+<p><pre><code>return _.pluck(_.sortBy(data.comments, function(comment){
+		return _.size(comment.body.split(&quot;&quot;));
+		}).reverse(), &apos;user.login&apos;);</code></pre></p>
 <p>In order from most verbose comment to least: <pre style="font-size:11px;line-height:1;max-height:300px;">[
  &quot;Linenfelser&quot;,
  &quot;nicolele&quot;,
@@ -736,34 +837,28 @@ ask based on this data. Our team chose to tackle on the following:</p>
 ]</pre></p>
 <h1 id="which-student-has-been-a-member-of-github-the-longest">Which student has been a member of GitHub the longest?</h1>
 <p>(This assumes that userIDs were assigned consecutively)</p>
-<p><pre>
-<span class="keyword">return</span> _.first(_.pluck(_.sortBy((_.pluck((data.comments), <span class="string">&quot;user&quot;</span>)), <span class="string">&quot;id&quot;</span>), <span class="string">&quot;login&quot;</span>))
-</pre></p>
+<p><pre><code>return _.first(_.pluck(_.sortBy((_.pluck((data.comments), &quot;user&quot;)), &quot;id&quot;), &quot;login&quot;))</code></pre></p>
 <p>Assuming that GitHub userIDs are assigned sequentially, <pre style="font-size:11px;line-height:1;max-height:300px;">&quot;willzfarmer&quot;</pre> has been a member of github the longest.</p>
 <h1 id="who-has-updated-their-comment">Who has updated their comment?</h1>
-<p><pre>
-<span class="keyword">return</span> _.pluck(_.filter(data.comments, <span class="keyword">function</span>(comment){
-    <span class="keyword">return</span> comment[<span class="string">&apos;created_at&apos;</span>] !== comment[<span class="string">&apos;updated_at&apos;</span>];
-}), <span class="string">&apos;user.login&apos;</span>);
-</pre></p>
+<p><pre><code>return _.pluck(_.filter(data.comments, function(comment){
+	return comment[&apos;created_at&apos;] !== comment[&apos;updated_at&apos;];
+}), &apos;user.login&apos;);</code></pre></p>
 <p>The students who have updated their comments are: <pre style="font-size:11px;line-height:1;max-height:300px;">[
  &quot;KevinKGifford&quot;,
  &quot;kjblakemore&quot;
 ]</pre></p>
 <h1 id="who-uses-the-most-punctuation">Who uses the most punctuation?</h1>
-<p><pre>
-<span class="keyword">return</span> _.chain(data.comments)
-    .map(<span class="keyword">function</span>(obj) {
-        <span class="keyword">return</span> [obj.user.login,
-                obj.body.match(/[`~!@<span class="comment">#\$%\^&amp;\*\(\)_\+-=\[\]\\\{\}\|;&apos;:&quot;,\./&lt;&gt;\?]/g).length];</span>
+<p><pre><code>return _.chain(data.comments)
+    .map(function(obj) {
+        return [obj.user.login,
+                obj.body.match(/[`~!@#\$%\^&amp;\*\(\)_\+-=\[\]\\\{\}\|;&apos;:&quot;,\./&lt;&gt;\?]/g).length];
     })
-    .sortBy(<span class="keyword">function</span>(tup) {
-        <span class="keyword">return</span> tup[<span class="number">1</span>];
+    .sortBy(function(tup) {
+        return tup[1];
     })
-    .map(<span class="keyword">function</span>(tup) {
-        <span class="keyword">return</span> tup[<span class="number">0</span>];
-    })
-</pre></p>
+    .map(function(tup) {
+        return tup[0];
+    })</code></pre></p>
 <p>In order of least punctuation used to most:</p>
 <pre style="font-size:11px;line-height:1;max-height:300px;">[
  &quot;twagar95&quot;,
@@ -815,11 +910,15 @@ ask based on this data. Our team chose to tackle on the following:</p>
 <script src="../../gitbook/app.js"></script>
 
     
-    <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    <script src="../../gitbook/plugins/gitbook-plugin-bigdata/bigdata.js"></script>
     
 
     
-    <script src="../../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
     
 
 <script>

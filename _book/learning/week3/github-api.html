@@ -29,6 +29,10 @@
         
     
         
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+        
+    
+        
         <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
         
     
@@ -48,7 +52,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.4.1" data-basepath="../.." data-revision="Sun Sep 20 2015 12:58:41 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.4.1" data-basepath="../.." data-revision="Mon Sep 21 2015 16:42:29 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -379,6 +383,72 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="learning/week5/index.html">
+            
+                
+                    <a href="../../learning/week5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Week 5
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="learning/week5/birdstrike-report.html">
+            
+                
+                    <a href="../../learning/week5/birdstrike-report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.1.</b>
+                        
+                        Birdstrike Report
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="learning/week5/viz-steps.html">
+            
+                
+                    <a href="../../learning/week5/viz-steps.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.2.</b>
+                        
+                        Viz Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="learning/week5/viz-drills.html">
+            
+                
+                    <a href="../../learning/week5/viz-drills.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.3.</b>
+                        
+                        Viz Drills
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -571,6 +641,42 @@
                         <i class="fa fa-check"></i>
                         
                             <b>2.3.2.</b>
+                        
+                        Report
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="hackathons/birdstrikes/index.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Birdstrikes
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="hackathons/birdstrikes/report.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
                         
                         Report
                     </a>
@@ -855,25 +961,22 @@ you want.</p>
    &quot;followers_url&quot;: &quot;https://api.githu</pre>
 
 <p>There are 28 comments.</p>
-<p><pre>
-<span class="keyword">return</span> _.pluck(data, <span class="string">&apos;user.login&apos;</span>)
-</pre></p>
+<p><pre><code>return _.pluck(data, &apos;user.login&apos;)</code></pre></p>
 <p>The github account names are willzfarmer,twagar95,Malaokia,fadhilfath,hswitte,ZachLamb,zhya215,jocr1627,drewdinger,94kazakov,nicolele,satchelspencer,tiro6090,Linenfelser,KevinKGifford,calebhsu,sumi6109,pail4944,DomoYeti,boanding,kjblakemore,SankethSukumarShetty,AndreyShprengel,co-bri,karisantos,anbe6083,jraesly,doubleshow.</p>
 <h1 id="exercises">Exercises</h1>
 <p>Now it&apos;s your turn to answer the following questions using the real data.</p>
 <h3 id="how-many-issues-have-been-created-to-date-in-our-class-s-forum-repository">How many issues have been created to date in our class&apos;s forum repository?</h3>
 <p><div class="githubapi">       <div class="message">Data is loaded from https://api.github.com/repos/bigdatahci2015/forum/issues</div></div></p>
-<p><pre>
-<span class="comment">// add lodash code to process the data and generate the answer</span>
-<span class="keyword">return</span> data.length
-</pre></p>
-<pre style="font-size:11px;line-height:1;max-height:300px;">15</pre>
+<p><pre><code>// add lodash code to process the data and generate the answer
+return data.length</code></pre></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">18</pre>
 
 <h3 id="what-are-the-titles-of-these-issues">What are the titles of these issues?</h3>
-<p><pre>
-<span class="keyword">return</span> _.pluck(data, <span class="string">&quot;title&quot;</span>)
-</pre></p>
+<p><pre><code>return _.pluck(data, &quot;title&quot;)</code></pre></p>
 <pre style="font-size:11px;line-height:1;max-height:300px;">[
+ &quot;Questions for the Birdstrike Hackathon&quot;,
+ &quot;Corrupt file in .git&quot;,
+ &quot;Converting JSON to Tableau ready (on OSX)&quot;,
  &quot;Week 4 Learning Challenge &quot;,
  &quot;Your FCQ question&quot;,
  &quot;Everyone&apos;s book&quot;,
@@ -976,21 +1079,17 @@ you want.</p>
   &quot;has_pages&quot;: false,
   &quot;forks_count&quot;: 4,
   &quot;mirror_url&quot;: null,
-  &quot;open_issues_count&quot;: 15,
+  &quot;open_issues_count&quot;: 18,
   &quot;forks&quot;: 4,
-  &quot;open_issues&quot;: 15,
+  &quot;open_issues&quot;: 18,
   &quot;watcher</pre>
 
-<p><pre>
-<span class="comment">// add lodash code to process the data and generate the answer</span>
-<span class="keyword">return</span> data.length
-</pre></p>
+<p><pre><code>// add lodash code to process the data and generate the answer
+return data.length</code></pre></p>
 <pre style="font-size:11px;line-height:1;max-height:300px;">5</pre>
 
 <h3 id="what-are-the-fork-counts-of-our-class-s-repositories">What are the fork counts of our class&apos;s repositories?</h3>
-<p><pre>
-<span class="keyword">return</span> _.pluck(data, <span class="string">&quot;forks&quot;</span>)
-</pre></p>
+<p><pre><code>return _.pluck(data, &quot;forks&quot;)</code></pre></p>
 <pre style="font-size:11px;line-height:1;max-height:300px;">[
  4,
  2,
@@ -1100,10 +1199,8 @@ you want.</p>
    &quot;gravatar_id&quot;: &quot;&quot;,
    &quot;url&quot;: &quot;</pre>
 
-<p><pre>
-<span class="comment">// add lodash code to process the data and generate the answer</span>
-<span class="keyword">return</span> _.pluck(_.where(data, {<span class="string">&quot;private&quot;</span>:<span class="keyword">false</span>}), <span class="string">&quot;private&quot;</span>).length
-</pre></p>
+<p><pre><code>// add lodash code to process the data and generate the answer
+return _.pluck(_.where(data, {&quot;private&quot;:false}), &quot;private&quot;).length</code></pre></p>
 <pre style="font-size:11px;line-height:1;max-height:300px;">30</pre>
 
 <h3 id="how-many-public-gists-does-the-user-doubleshow-have">How many public gists does the user <code>doubleshow</code> have?</h3>
@@ -1166,13 +1263,13 @@ you want.</p>
     &quot;filename&quot;: &quot;index.xml&quot;,
     &quot;type&quot;: &quot;application/xml&quot;,
     &quot;language&quot;: &quot;XML&quot;,
-    &quot;raw_url&quot;: &quot;https://gist.githubusercontent.com/doubleshow/4572750aa0e45943b418/raw/ba5360c1a49754524cfa47def73e03374d5adc67/index.xml&quot;,
-    &quot;size&quot;: 1472
+    &quot;raw_url&quot;: &quot;https://gist.githubusercontent.com/doubleshow/4572750aa0e45943b418/raw/8cb287c520f07210c142f51e821052018cd2a8de/index.xml&quot;,
+    &quot;size&quot;: 1541
    }
   },
   &quot;public&quot;: true,
   &quot;created_at&quot;: &quot;2015-09-18T11:47:52Z&quot;,
-  &quot;updated_at&quot;: &quot;2015-09-18T11:47:52Z&quot;,
+  &quot;updated_at&quot;: &quot;2015-09-21T21:10:10Z&quot;,
   &quot;description&quot;: &quot;craftml&quot;,
   &quot;comments&quot;: 0,
   &quot;user&quot;: null,
@@ -1226,9 +1323,7 @@ you want.</p>
    &quot;id&quot;: 129562,
    &quot;avatar_url&quot;: &quot;https://avatars.g</pre>
 
-<p><pre>
-<span class="keyword">return</span> _.pluck(_.where(data, {<span class="string">&quot;public&quot;</span>:<span class="keyword">true</span>}), <span class="string">&quot;public&quot;</span>).length
-</pre></p>
+<p><pre><code>return _.pluck(_.where(data, {&quot;public&quot;:true}), &quot;public&quot;).length</code></pre></p>
 <pre style="font-size:11px;line-height:1;max-height:300px;">30</pre>
 
                     
@@ -1252,11 +1347,15 @@ you want.</p>
 <script src="../../gitbook/app.js"></script>
 
     
-    <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    <script src="../../gitbook/plugins/gitbook-plugin-bigdata/bigdata.js"></script>
     
 
     
-    <script src="../../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
     
 
 <script>
