@@ -29,6 +29,10 @@
         
     
         
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+        
+    
+        
         <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
         
     
@@ -48,7 +52,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.5.1" data-basepath="../.." data-revision="Sun Sep 20 2015 12:58:41 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.5.1" data-basepath="../.." data-revision="Mon Sep 21 2015 16:42:29 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -379,6 +383,72 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="learning/week5/index.html">
+            
+                
+                    <a href="../../learning/week5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Week 5
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="learning/week5/birdstrike-report.html">
+            
+                
+                    <a href="../../learning/week5/birdstrike-report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.1.</b>
+                        
+                        Birdstrike Report
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="learning/week5/viz-steps.html">
+            
+                
+                    <a href="../../learning/week5/viz-steps.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.2.</b>
+                        
+                        Viz Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="learning/week5/viz-drills.html">
+            
+                
+                    <a href="../../learning/week5/viz-drills.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.3.</b>
+                        
+                        Viz Drills
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -583,6 +653,42 @@
             
         </li>
     
+        <li class="chapter " data-level="2.4" data-path="hackathons/birdstrikes/index.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Birdstrikes
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="hackathons/birdstrikes/report.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        Report
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -706,45 +812,151 @@ will be able to independently reproduce these solutions when asked to do so.
 Coming up, we will incorporate variations of these questions into a future hackathon
  and you are expected to be capable of reproducing and adapting your solutions.</p>
 <h1 id="what-is-the-average-course-rating-by-department-by-heather-witte">What is the average course rating by department? by Heather Witte</h1>
-<p><pre>
-<span class="keyword">var</span> grps = _.groupBy(data, <span class="string">&apos;Subject&apos;</span>)
-<span class="keyword">var</span> myvar =  _.mapValues(grps, <span class="keyword">function</span>(group){
-    <span class="keyword">var</span> rating = [<span class="number">0</span>,<span class="number">0</span>]
-    _.map(group, <span class="keyword">function</span>(n){
-    	<span class="keyword">if</span> (n.AvgCourse != <span class="keyword">null</span>) {
-    	rating[<span class="number">0</span>] += n.AvgCourse
-    	rating[<span class="number">1</span>] += <span class="number">1</span>}
-    <span class="keyword">return</span> rating
+<p><pre><code>var grps = _.groupBy(data, &apos;Subject&apos;)
+var myvar =  _.mapValues(grps, function(group){
+    var rating = [0,0]
+    _.map(group, function(n){
+    	if (n.AvgCourse != null) {
+    	rating[0] += n.AvgCourse
+    	rating[1] += 1}
+    return rating
     })
-    <span class="keyword">return</span> rating[<span class="number">0</span>]/rating[<span class="number">1</span>]
+    return rating[0]/rating[1]
 })
-<span class="comment">//return myvar</span>
-<span class="keyword">var</span> myvar = _.mapValues(grps, <span class="keyword">function</span>(group){
-    <span class="keyword">return</span> group.AvgCourse	
-})
-<span class="keyword">return</span> myvar
-</pre></p>
-<pre style="font-size:11px;line-height:1;max-height:300px;">{}</pre>
+return myvar</code></pre></p>
+<pre style="font-size:11px;line-height:1;max-height:300px;">{
+ &quot;HIST&quot;: 4.925072463768115,
+ &quot;HONR&quot;: 5.470909090909092,
+ &quot;HUMN&quot;: 5.012,
+ &quot;IAFS&quot;: 5.123157894736842,
+ &quot;IPHY&quot;: 4.85851851851852,
+ &quot;LING&quot;: 4.667096774193548,
+ &quot;MATH&quot;: 4.388229665071771,
+ &quot;MCDB&quot;: 4.716605504587155,
+ &quot;BAKR&quot;: null,
+ &quot;PHIL&quot;: 4.8359459459459435,
+ &quot;PHYS&quot;: 4.4928947368421035,
+ &quot;PSCI&quot;: 4.870480769230768,
+ &quot;NRSC&quot;: 5.050588235294118,
+ &quot;PSYC&quot;: 5.013545454545456,
+ &quot;WRTG&quot;: 4.717683923705725,
+ &quot;RLST&quot;: 4.6259999999999994,
+ &quot;SLHS&quot;: 4.837968750000001,
+ &quot;SOCY&quot;: 4.8045599999999995,
+ &quot;ARAB&quot;: 4.519,
+ &quot;PORT&quot;: 5.494285714285714,
+ &quot;SPAN&quot;: 4.90142857142857,
+ &quot;COMR&quot;: null,
+ &quot;FARR&quot;: null,
+ &quot;GSAP&quot;: null,
+ &quot;INVS&quot;: 5.563000000000001,
+ &quot;PACS&quot;: 4.7925,
+ &quot;SEWL&quot;: null,
+ &quot;DNCE&quot;: 5.242142857142857,
+ &quot;THTR&quot;: 4.9603174603174605,
+ &quot;WMST&quot;: 4.866153846153848,
+ &quot;ACCT&quot;: 4.809545454545455,
+ &quot;BADM&quot;: 5.087419354838711,
+ &quot;BCOR&quot;: 4.491132075471699,
+ &quot;BSLW&quot;: 4.836666666666666,
+ &quot;BUSM&quot;: 4.876666666666667,
+ &quot;CESR&quot;: 5.111428571428571,
+ &quot;ESBM&quot;: 5.062173913043478,
+ &quot;FNCE&quot;: 4.682272727272728,
+ &quot;INBU&quot;: 4.441428571428571,
+ &quot;MBAC&quot;: 4.481000000000001,
+ &quot;MBAX&quot;: 4.898064516129031,
+ &quot;MGMT&quot;: 4.945263157894737,
+ &quot;MKTG&quot;: 4.555405405405404,
+ &quot;REAL&quot;: 5.245454545454546,
+ &quot;EDUC&quot;: 4.912290076335878,
+ &quot;ASEN&quot;: 4.900625000000001,
+ &quot;CHEN&quot;: 4.424782608695652,
+ &quot;CSCI&quot;: 4.554,
+ &quot;AREN&quot;: 4.61090909090909,
+ &quot;CVEN&quot;: 4.9444155844155855,
+ &quot;ECEN&quot;: 4.5656923076923075,
+ &quot;EMEN&quot;: 4.969130434782609,
+ &quot;EHON&quot;: 5.468000000000001,
+ &quot;GEEN&quot;: 4.681967213114754,
+ &quot;EVEN&quot;: 4.6899999999999995,
+ &quot;HUEN&quot;: 5.367058823529412,
+ &quot;MCEN&quot;: 4.479772727272726,
+ &quot;TLEN&quot;: 4.818695652173913,
+ &quot;ATLS&quot;: 5.064047619047618,
+ &quot;MUSM&quot;: 4.848000000000001,
+ &quot;RSEI&quot;: 5.655,
+ &quot;JOUR&quot;: 4.892823529411764,
+ &quot;LAWS&quot;: 4.9584375,
+ &quot;CONV&quot;: null,
+ &quot;EMUS&quot;: 5.364642857142856,
+ &quot;MUEL&quot;: 4.9253124999999995,
+ &quot;MUSC&quot;: 4.76109756097561,
+ &quot;PMUS&quot;: 5.523636363636362,
+ &quot;TMUS&quot;: null,
+ &quot;AIRR&quot;: 5.155833333333333,
+ &quot;MILR&quot;: 5.27,
+ &quot;NAVR&quot;: 5.315555555555555,
+ &quot;CSVC&quot;: null,
+ &quot;LDSP&quot;: null,
+ &quot;NRLN&quot;: 5.67,
+ &quot;PRLC&quot;: 5.333333333333333,
+ &quot;ARCH&quot;: 4.57,
+ &quot;ENVD&quot;: 4.955116279069768,
+ &quot;ARTH&quot;: 4.896666666666666,
+ &quot;ARTS&quot;: 5.010625,
+ &quot;CAMW&quot;: 4.54,
+ &quot;CWCV&quot;: null,
+ &quot;LGBT&quot;: 5,
+ &quot;LIBB&quot;: null,
+ &quot;CHIN&quot;: 4.966,
+ &quot;FRSI&quot;: 4.44,
+ &quot;HIND&quot;: 4.56,
+ &quot;JPNS&quot;: 5.398124999999999,
+ &quot;KREN&quot;: 5.03,
+ &quot;ANTH&quot;: 4.8636585365853655,
+ &quot;APPM&quot;: 4.736530612244898,
+ &quot;ASTR&quot;: 4.913913043478261,
+ &quot;ARSC&quot;: 5.20125,
+ &quot;ATOC&quot;: 4.632083333333334,
+ &quot;CHEM&quot;: 4.597166666666667,
+ &quot;CLAS&quot;: 5.213703703703704,
+ &quot;COMM&quot;: 4.664933333333331,
+ &quot;EBIO&quot;: 4.720860215053764,
+ &quot;ECON&quot;: 4.526666666666667,
+ &quot;ENGL&quot;: 4.9946610169491485,
+ &quot;ENVS&quot;: 5.0736842105263165,
+ &quot;ETHN&quot;: 5.203499999999999,
+ &quot;FILM&quot;: 5.059666666666667,
+ &quot;FREN&quot;: 4.881666666666666,
+ &quot;ITAL&quot;: 5.281875000000001,
+ &quot;GEOG&quot;: 4.8403846153846155,
+ &quot;GEOL&quot;: 4.8985714285714295,
+ &quot;GRMN&quot;: 5.05,
+ &quot;HEBR&quot;: 5.138,
+ &quot;RUSS&quot;: 5.051874999999999,
+ &quot;SCAN&quot;: 5.3575,
+ &quot;SWED&quot;: 5.54,
+ &quot;LEAD&quot;: 5.68
+}</pre>
 
 
 <h1 id="what-should-my-major-be-if-i-want-have-a-high-gpa-by-andrey-shprengel">What should my major be if I want have a high gpa by Andrey Shprengel</h1>
-<p><pre>
-<span class="keyword">var</span> grps = _.groupBy(data, <span class="keyword">function</span>(c){<span class="keyword">return</span> c.Subject})
-<span class="keyword">var</span> grades = _.mapValues(grps, <span class="keyword">function</span>(grp){<span class="keyword">return</span> _.compact(_.pluck(grp, <span class="string">&apos;AVG_GRD&apos;</span>))})
+<p><pre><code>var grps = _.groupBy(data, function(c){return c.Subject})
+var grades = _.mapValues(grps, function(grp){return _.compact(_.pluck(grp, &apos;AVG_GRD&apos;))})
 
-<span class="keyword">var</span> grades = _.mapValues(grades, <span class="keyword">function</span>(group){
-    <span class="keyword">var</span> total = <span class="number">0</span>
-    _.map(group, <span class="keyword">function</span>(n){
-            <span class="comment">//console.log()</span>
-            total += n
-            <span class="keyword">return</span> total
-                }
-                )
-                <span class="keyword">return</span> total/(_.size(group))})
-grades = _.map(grades, <span class="keyword">function</span>(value, key){
-    <span class="keyword">return</span> {<span class="string">&quot;subject&quot;</span>: key, <span class="string">&quot;grade&quot;</span>:value}})
-<span class="keyword">return</span> _.sortBy(grades, <span class="string">&quot;grade&quot;</span>).reverse()
-</pre></p>
+var grades = _.mapValues(grades, function(group){
+	var total = 0
+	_.map(group, function(n){
+			//console.log()
+			total += n
+			return total
+				}
+				)
+				return total/(_.size(group))})
+grades = _.map(grades, function(value, key){
+	return {&quot;subject&quot;: key, &quot;grade&quot;:value}})
+return _.sortBy(grades, &quot;grade&quot;).reverse()</code></pre></p>
 <pre style="font-size:11px;line-height:1;max-height:300px;">[
  {
   &quot;subject&quot;: &quot;CSVC&quot;,
@@ -1113,33 +1325,31 @@ grades = _.map(grades, <span class="keyword">function</span>(value, key){
 <h1 id="what-professors-should-be-fired-by-will-farmer">What professors should be fired? by Will Farmer</h1>
 <p>If the professor has a rating less than two standard deviations away, he&apos;s not
 a good one.</p>
-<p><pre>
-<span class="keyword">var</span> professors =  _.chain(data)
-        .map(<span class="keyword">function</span>(obj) {
-            <span class="keyword">return</span> _.map(obj.Instructors, <span class="keyword">function</span>(inst) {
-                <span class="keyword">return</span> {<span class="string">&quot;name&quot;</span>: inst.name,
-                        <span class="string">&quot;rating&quot;</span>: obj.AvgInstructor}
+<p><pre><code>var professors =  _.chain(data)
+        .map(function(obj) {
+            return _.map(obj.Instructors, function(inst) {
+                return {&quot;name&quot;: inst.name,
+                        &quot;rating&quot;: obj.AvgInstructor}
             })
         }).flatten()
-        .filter(<span class="keyword">function</span>(obj) {
-            <span class="keyword">return</span> obj.rating;
+        .filter(function(obj) {
+            return obj.rating;
         })
         .value();
-<span class="keyword">var</span> rating_avg = _.reduce(professors, <span class="keyword">function</span>(p, n) {
-            <span class="keyword">return</span> (p + n.rating);
-        }, <span class="number">0</span>) / professors.length;
-<span class="keyword">var</span> rating_stddev = Math.sqrt(_.reduce(professors, <span class="keyword">function</span>(p, n) {
-            <span class="keyword">return</span> (p + Math.pow(n.rating - rating_avg, <span class="number">2</span>));
-        }, <span class="number">0</span>) / professors.length);
-<span class="keyword">return</span> [rating_avg, rating_stddev,
+var rating_avg = _.reduce(professors, function(p, n) {
+            return (p + n.rating);
+        }, 0) / professors.length;
+var rating_stddev = Math.sqrt(_.reduce(professors, function(p, n) {
+            return (p + Math.pow(n.rating - rating_avg, 2));
+        }, 0) / professors.length);
+return [rating_avg, rating_stddev,
      _.chain(professors)
-            .filter(<span class="keyword">function</span>(obj) {
-                <span class="keyword">return</span> (obj.rating &lt; (rating_avg - (<span class="number">2</span> * rating_stddev)));
-            }).map(<span class="keyword">function</span>(obj) {
-                <span class="keyword">return</span> obj.name + <span class="string">&quot;, &quot;</span> + obj.rating.toString();
+            .filter(function(obj) {
+                return (obj.rating &lt; (rating_avg - (2 * rating_stddev)));
+            }).map(function(obj) {
+                return obj.name + &quot;, &quot; + obj.rating.toString();
             }).uniq()
-            .value()];
-</pre></p>
+            .value()];</code></pre></p>
 <p>Average professor rating is: 5.173157003808693.</p>
 <p>Standard Deviation is: 0.6577084664913871.</p>
 <pre style="font-size:11px;line-height:1;max-height:300px;">[
@@ -1319,6 +1529,8 @@ a good one.</p>
  &quot;ZIMMERMAN, ERIC, 3.5&quot;,
  &quot;DE ALWIS, SENARATH P, 3</pre>
 
+
+
                     
                     </section>
                 
@@ -1340,11 +1552,15 @@ a good one.</p>
 <script src="../../gitbook/app.js"></script>
 
     
-    <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    <script src="../../gitbook/plugins/gitbook-plugin-bigdata/bigdata.js"></script>
     
 
     
-    <script src="../../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
     
 
 <script>
