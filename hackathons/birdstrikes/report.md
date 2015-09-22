@@ -12,47 +12,47 @@ This report is prepared by
 * [Full name](link to github account)
 * [Full name](link to github account)
 
-# (Question 1)
+# which airlines have worst luck with birdstrikes in terms of damage caused?
 
-This question was asked by (student's github id).
+This question was asked by (calebhsu).
 
-![screenshot](screenshot.png)
-
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
-
-# (Question 2)
-
-This question was asked by (student's github id).
-
-![screenshot](screenshot.png)
+![screenshot](airline&cost.png)
 
 (write your explanation for the reader as to where to look at this chart in order
     to see the answer)
 
-# (Question 3)
+# what is the most common flight phase where a birdstrike occurred?
 
-This question was asked by (student's github id).
+This question was asked by (kevinkgifford).
 
-![screenshot](screenshot.png)
-
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
-
-# (Question 4)
-
-This question was asked by (student's github id).
-
-![screenshot](screenshot.png)
+![screenshot](flightphase.png)
 
 (write your explanation for the reader as to where to look at this chart in order
     to see the answer)
 
-# (Question 5)
+# what airports have most expensive average accident?
 
-This question was asked by (student's github id).
+This question was asked by (satchelspencer).
 
-![screenshot](screenshot.png)
+![screenshot](airportmoney.png)
+
+(write your explanation for the reader as to where to look at this chart in order
+    to see the answer)
+
+# which plane strikes the most birds?
+
+This question was asked by (twagar95).
+
+![screenshot](modelmoney.png)
+
+(write your explanation for the reader as to where to look at this chart in order
+    to see the answer)
+
+# what state had the highest number of bird strikes?
+
+This question was asked by (drewdinger).
+
+![screenshot](state.png)
 
 (write your explanation for the reader as to where to look at this chart in order
     to see the answer)    
