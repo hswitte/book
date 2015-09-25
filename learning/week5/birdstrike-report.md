@@ -40,8 +40,30 @@ return "[answer]"
 return "[answer]"
 {% endlodash %}
 
-# (Question 5) by (Name)
+
+# what state had the highest number of bird strikes?
 
 {% lodash %}
-return "[answer]"
+var grps = _.groupBy(data, 'Origin State')
+
+var map = _.mapValues(grps, function(d){
+    return d.length
+})
+
+var newvar = _.map(map, function(v,k){
+	return {"state": k, "count":v}
+})
+
+_.remove(newvar, function(n){
+ 	return n.state == 'N/A'	
+})
+
+return _.sortBy(newvar, "count").reverse()
+
 {% endlodash %}
+
+<table><tr><td>State</td><td>Strike Count</td></tr>
+{% for item in result %}
+<tr> <td>{{item.state}}</td> <td>{{item.count}}</td> </tr>
+{% endfor %}
+</table>
