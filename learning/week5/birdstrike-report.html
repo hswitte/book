@@ -52,7 +52,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.6.1" data-basepath="../.." data-revision="Tue Sep 22 2015 11:12:41 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.6.1" data-basepath="../.." data-revision="Thu Sep 24 2015 17:57:45 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -818,8 +818,149 @@ real data.</p>
 <p><pre><code>return &quot;[answer]&quot;</code></pre></p>
 <h1 id="-question-4-by-name">(Question 4) by (Name)</h1>
 <p><pre><code>return &quot;[answer]&quot;</code></pre></p>
-<h1 id="-question-5-by-name">(Question 5) by (Name)</h1>
-<p><pre><code>return &quot;[answer]&quot;</code></pre></p>
+<h1 id="what-state-had-the-highest-number-of-bird-strikes">what state had the highest number of bird strikes?</h1>
+<p><pre><code>var grps = _.groupBy(data, &apos;Origin State&apos;)
+
+var map = _.mapValues(grps, function(d){
+    return d.length
+})
+
+var newvar = _.map(map, function(v,k){
+	return {&quot;state&quot;: k, &quot;count&quot;:v}
+})
+
+_.remove(newvar, function(n){
+ 	return n.state == &apos;N/A&apos;	
+})
+
+return _.sortBy(newvar, &quot;count&quot;).reverse()</code></pre></p>
+<table><tr><td>State</td><td>Strike Count</td></tr>
+
+<tr> <td>Texas</td> <td>7824</td> </tr>
+
+<tr> <td>California</td> <td>7803</td> </tr>
+
+<tr> <td>Florida</td> <td>5322</td> </tr>
+
+<tr> <td>New York</td> <td>4986</td> </tr>
+
+<tr> <td>Colorado</td> <td>4214</td> </tr>
+
+<tr> <td>Illinois</td> <td>3987</td> </tr>
+
+<tr> <td>Ohio</td> <td>3537</td> </tr>
+
+<tr> <td>Tennessee</td> <td>3057</td> </tr>
+
+<tr> <td>New Jersey</td> <td>2936</td> </tr>
+
+<tr> <td>Pennsylvania</td> <td>2781</td> </tr>
+
+<tr> <td>Missouri</td> <td>2435</td> </tr>
+
+<tr> <td>Michigan</td> <td>2294</td> </tr>
+
+<tr> <td>Kentucky</td> <td>2178</td> </tr>
+
+<tr> <td>Louisiana</td> <td>2147</td> </tr>
+
+<tr> <td>Hawaii</td> <td>2009</td> </tr>
+
+<tr> <td>Arizona</td> <td>1776</td> </tr>
+
+<tr> <td>DC</td> <td>1645</td> </tr>
+
+<tr> <td>Georgia</td> <td>1514</td> </tr>
+
+<tr> <td>Massachusetts</td> <td>1494</td> </tr>
+
+<tr> <td>Oregon</td> <td>1493</td> </tr>
+
+<tr> <td>Washington</td> <td>1446</td> </tr>
+
+<tr> <td>North Carolina</td> <td>1399</td> </tr>
+
+<tr> <td>Indiana</td> <td>1330</td> </tr>
+
+<tr> <td>Nebraska</td> <td>1265</td> </tr>
+
+<tr> <td>Maryland</td> <td>1238</td> </tr>
+
+<tr> <td>Utah</td> <td>1237</td> </tr>
+
+<tr> <td>South Carolina</td> <td>1127</td> </tr>
+
+<tr> <td>Minnesota</td> <td>1105</td> </tr>
+
+<tr> <td>Oklahoma</td> <td>1013</td> </tr>
+
+<tr> <td>Wisconsin</td> <td>985</td> </tr>
+
+<tr> <td>Virginia</td> <td>951</td> </tr>
+
+<tr> <td>Connecticut</td> <td>808</td> </tr>
+
+<tr> <td>Alabama</td> <td>745</td> </tr>
+
+<tr> <td>Iowa</td> <td>717</td> </tr>
+
+<tr> <td>Kansas</td> <td>636</td> </tr>
+
+<tr> <td>New Hampshire</td> <td>603</td> </tr>
+
+<tr> <td>Alaska</td> <td>570</td> </tr>
+
+<tr> <td>Mississippi</td> <td>544</td> </tr>
+
+<tr> <td>Arkansas</td> <td>463</td> </tr>
+
+<tr> <td>North Dakota</td> <td>450</td> </tr>
+
+<tr> <td>Rhode Island</td> <td>431</td> </tr>
+
+<tr> <td>Nevada</td> <td>429</td> </tr>
+
+<tr> <td>New Mexico</td> <td>372</td> </tr>
+
+<tr> <td>South Dakota</td> <td>331</td> </tr>
+
+<tr> <td>Maine</td> <td>318</td> </tr>
+
+<tr> <td>West Virginia</td> <td>286</td> </tr>
+
+<tr> <td>Delaware</td> <td>284</td> </tr>
+
+<tr> <td>Idaho</td> <td>283</td> </tr>
+
+<tr> <td>Montana</td> <td>181</td> </tr>
+
+<tr> <td>Puerto Rico</td> <td>169</td> </tr>
+
+<tr> <td>Wyoming</td> <td>148</td> </tr>
+
+<tr> <td>Prince Edward Island</td> <td>144</td> </tr>
+
+<tr> <td>Vermont</td> <td>138</td> </tr>
+
+<tr> <td>Ontario</td> <td>92</td> </tr>
+
+<tr> <td>British Columbia</td> <td>84</td> </tr>
+
+<tr> <td>Virgin Islands</td> <td>80</td> </tr>
+
+<tr> <td>Alberta</td> <td>32</td> </tr>
+
+<tr> <td>Quebec</td> <td>27</td> </tr>
+
+<tr> <td>Manitoba</td> <td>10</td> </tr>
+
+<tr> <td>Newfoundland and Labrador</td> <td>8</td> </tr>
+
+<tr> <td>Nova Scotia</td> <td>5</td> </tr>
+
+<tr> <td>Saskatchewan</td> <td>4</td> </tr>
+
+</table>
 
                     
                     </section>
