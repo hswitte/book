@@ -6,11 +6,11 @@ bird strikes.
 # Authors
 
 This report is prepared by
-* [Full name](link to github account)
-* [Full name](link to github account)
-* [Full name](link to github account)
-* [Full name](link to github account)
-* [Full name](link to github account)
+* [Kari Santos](https://github.com/karisantos)
+* [Heather Witte](https://github.com/hswitte)
+* [Zachary Lamb](https://github.com/ZachLamb)
+* [Fadhil Suhendi](https://github.com/fadhilfath)
+* [Denis Kazakov](https://github.com/94kazakov)
 
 # which airlines have worst luck with birdstrikes in terms of damage caused?
 
