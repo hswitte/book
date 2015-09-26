@@ -52,7 +52,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.6.1" data-basepath="../.." data-revision="Thu Sep 24 2015 17:57:45 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.6.1" data-basepath="../.." data-revision="Fri Sep 25 2015 19:08:22 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -810,14 +810,309 @@ Utilize <code>_.map</code>, <code>_.filter</code>, <code>_.group</code> ...etc. 
 <p>This time, the data is not already prepared for you in a nice JSON format. You
 will need to do it on your own, replacing the placeholder <code>birdstrike.json</code> with
 real data.</p>
-<h1 id="-question-1-by-name">(Question 1) by (Name)</h1>
-<p><pre><code>return &quot;[answer]&quot;</code></pre></p>
-<h1 id="-question-2-by-name">(Question 2) by (Name)</h1>
-<p><pre><code>return &quot;[answer]&quot;</code></pre></p>
-<h1 id="-question-3-by-name">(Question 3) by (Name)</h1>
-<p><pre><code>return &quot;[answer]&quot;</code></pre></p>
-<h1 id="-question-4-by-name">(Question 4) by (Name)</h1>
-<p><pre><code>return &quot;[answer]&quot;</code></pre></p>
+<p>This report is prepared by</p>
+<ul>
+<li><a href="https://github.com/karisantos" target="_blank">Kari Santos</a></li>
+<li><a href="https://github.com/hswitte" target="_blank">Heather Witte</a></li>
+<li><a href="https://github.com/ZachLamb" target="_blank">Zachary Lamb</a></li>
+<li><a href="https://github.com/fadhilfath" target="_blank">Fadhil Suhendi</a></li>
+<li><a href="https://github.com/94kazakov" target="_blank">Denis Kazakov</a></li>
+</ul>
+<h1 id="which-airlines-have-the-worst-luck-with-birdstrikes-in-terms-of-damage-caused">which airlines have the worst luck with birdstrikes in terms of damage caused?</h1>
+<p><pre><code>var groups = _.groupBy(data, function(n){
+	return n[&apos;Aircraft: Airline/Operator&apos;]
+})
+var i = 0
+var costs = _.mapValues(groups, function(d){
+	var total = _.reduce(d, function(total, e){
+		var cost = e[&apos;Cost: Total $&apos;]
+		if (_.isString(cost)){
+			var temp1 = cost.replace(/,/g,&apos;&apos;)
+			var temp2 = _.parseInt(temp1)
+			cost = temp2
+		}
+		return total+cost
+	},0)
+	return total
+})
+var sorted = _.sortBy(_.pairs(costs), function(d){
+	return d[1]
+})
+
+return _.slice(_(sorted).reverse().value(), 0,10)</code></pre></p>
+<table><tr><td>Airline</td>
+    <td>Total Cost</td></tr>
+
+    <tr>
+        <td>BUSINESS</td>
+        <td>103565746</td>
+    </tr>
+
+    <tr>
+        <td>FEDEX EXPRESS</td>
+        <td>80529838</td>
+    </tr>
+
+    <tr>
+        <td>UNITED AIRLINES</td>
+        <td>74830899</td>
+    </tr>
+
+    <tr>
+        <td>US AIRWAYS</td>
+        <td>40259138</td>
+    </tr>
+
+    <tr>
+        <td>DELTA AIR LINES</td>
+        <td>20337701</td>
+    </tr>
+
+    <tr>
+        <td>MILITARY</td>
+        <td>16899033</td>
+    </tr>
+
+    <tr>
+        <td>SOUTHWEST AIRLINES</td>
+        <td>11792223</td>
+    </tr>
+
+    <tr>
+        <td>GOVERNMENT</td>
+        <td>9983201</td>
+    </tr>
+
+    <tr>
+        <td>UPS AIRLINES</td>
+        <td>8597069</td>
+    </tr>
+
+    <tr>
+        <td>PRIVATELY OWNED</td>
+        <td>7304241</td>
+    </tr>
+
+</table>
+
+
+
+<h1 id="what-is-the-most-common-flight-phase-where-a-birdstrike-occurred">what is the most common flight phase where a birdstrike occurred?</h1>
+<p><pre><code>var groups = _.groupBy(data, function(n) {
+    return n[&apos;When: Phase of flight&apos;]
+})
+
+var counts = _.mapValues(groups, function(d){
+    return d.length
+})
+var sorted = _.sortBy(_.pairs(counts), function(d) {
+    return d[1]
+})
+
+return _.slice(_(sorted).reverse().value(), 0,10)</code></pre></p>
+<table><tr><td>Flight Phase</td>
+    <td>Strike Count</td></tr>
+
+    <tr>
+        <td></td>
+        <td>34738</td>
+    </tr>
+
+    <tr>
+        <td>Approach</td>
+        <td>26329</td>
+    </tr>
+
+    <tr>
+        <td>Take-off run</td>
+        <td>11914</td>
+    </tr>
+
+    <tr>
+        <td>Landing Roll</td>
+        <td>11419</td>
+    </tr>
+
+    <tr>
+        <td>Climb</td>
+        <td>10409</td>
+    </tr>
+
+    <tr>
+        <td>Descent</td>
+        <td>2032</td>
+    </tr>
+
+    <tr>
+        <td>En Route</td>
+        <td>1973</td>
+    </tr>
+
+    <tr>
+        <td>Landing</td>
+        <td>315</td>
+    </tr>
+
+    <tr>
+        <td>Taxi</td>
+        <td>215</td>
+    </tr>
+
+    <tr>
+        <td>Parked</td>
+        <td>60</td>
+    </tr>
+
+</table>
+
+
+<h1 id="which-plane-strikes-the-most-birds">Which plane strikes the most birds?</h1>
+<p><pre><code>var groups = _.groupBy(data, function(n) {
+    return n[&apos;Aircraft: Make/Model&apos;]
+})
+
+var counts = _.mapValues(groups, function(d){
+    return d.length
+})
+
+var sorted = _.sortBy(_.pairs(counts), function(d) {
+    return d[1]
+})
+
+return _.slice(_(sorted).reverse().value(), 0,10)</code></pre>
+The table lists the top 10 aircraft makes that had the most incidents. </p>
+<table><tr><td>Aircraft Make/Model</td>
+    <td>Strike Count</td></tr>
+
+    <tr>
+        <td>UNKNOWN</td>
+        <td>24637</td>
+    </tr>
+
+    <tr>
+        <td>B-737-300</td>
+        <td>5524</td>
+    </tr>
+
+    <tr>
+        <td>A-320</td>
+        <td>4654</td>
+    </tr>
+
+    <tr>
+        <td>CL-RJ100/200</td>
+        <td>4262</td>
+    </tr>
+
+    <tr>
+        <td>B-737-700</td>
+        <td>4046</td>
+    </tr>
+
+    <tr>
+        <td>B-757-200</td>
+        <td>3945</td>
+    </tr>
+
+    <tr>
+        <td>A-319</td>
+        <td>3138</td>
+    </tr>
+
+    <tr>
+        <td>EMB-145</td>
+        <td>2067</td>
+    </tr>
+
+    <tr>
+        <td>A-300</td>
+        <td>2055</td>
+    </tr>
+
+    <tr>
+        <td>B-727-200</td>
+        <td>1771</td>
+    </tr>
+
+</table>
+
+<h1 id="what-airports-have-the-most-expensive-average-accident">what airports have the most expensive average accident?</h1>
+<p><pre><code>var groups = _.groupBy(data, function(n) {
+    return n[&apos;Airport: Name&apos;]
+})
+var i = 0
+var costs = _.mapValues(groups, function(d){
+	var avg = _.reduce(d, function(total,e){
+		var cost = e[&apos;Cost: Total $&apos;]
+		if (_.isString(cost)){
+			var temp1 = cost.replace(/,/g,&apos;&apos;)
+			cost = _.parseInt(temp1)	
+		}
+		return total+cost
+	},0)/_.size(d)
+	return avg
+})
+var sorted = _.sortBy(_.pairs(costs), function(d) {
+    return d[1]
+})
+
+return _.slice(_(sorted).reverse().value(), 0,10)</code></pre></p>
+<table><tr><td>Airline</td>
+    <td>Total Cost</td></tr>
+
+    <tr>
+        <td>NICE (FRANCE)</td>
+        <td>10135286</td>
+    </tr>
+
+    <tr>
+        <td>TROY MUNICIPAL ARPT</td>
+        <td>6198875.5</td>
+    </tr>
+
+    <tr>
+        <td>ASTORIA REGIONAL</td>
+        <td>2112899.6666666665</td>
+    </tr>
+
+    <tr>
+        <td>OGDENSBURG INTL ARPT</td>
+        <td>1757025</td>
+    </tr>
+
+    <tr>
+        <td>LA ISABELA  INTL ARPT</td>
+        <td>1500000</td>
+    </tr>
+
+    <tr>
+        <td>TONCONTIN INTL</td>
+        <td>1099149</td>
+    </tr>
+
+    <tr>
+        <td>BARNESVILLE-BRADFLD</td>
+        <td>976201</td>
+    </tr>
+
+    <tr>
+        <td>ANGOLA</td>
+        <td>855658</td>
+    </tr>
+
+    <tr>
+        <td>LOGAN COUNTY ARPT</td>
+        <td>852169</td>
+    </tr>
+
+    <tr>
+        <td>ROSEAU MUNI ARPT/RUDY BILLBERG FLD</td>
+        <td>760644</td>
+    </tr>
+
+</table>
+
+
 <h1 id="what-state-had-the-highest-number-of-bird-strikes">what state had the highest number of bird strikes?</h1>
 <p><pre><code>var grps = _.groupBy(data, &apos;Origin State&apos;)
 
