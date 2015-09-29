@@ -23,21 +23,25 @@ var groups = _.groupBy(data, function(d){
 
 // TODO: add real code to convert groups (which is an object) into an array like below
 // This array should have a lot more elements.
-var counts = [{"name": "AS","count": 3237},
-    {"name": "BU","count": 378},
-    {"name": "EB","count": 139},
-    {"name": "EN","count": 573}]
+//var counts = [{"name": "AS","count": 3237},
+//    {"name": "BU","count": 378},
+//    {"name": "EB","count": 139},
+//    {"name": "EN","count": 573}]
+
+var counts = _.mapValues(groups, function(d){
+    return d.length
+})
 
 console.log(counts)
 
 // TODO: modify the code below to produce a nice vertical bar charts
 
 function computeX(d, i) {
-    return 0
+    return i*20
 }
 
 function computeHeight(d, i) {
-    return 20
+    return d.count
 }
 
 function computeWidth(d, i) {
