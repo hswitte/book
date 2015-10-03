@@ -21,16 +21,13 @@ var groups = _.groupBy(data, function(d){
     return d['CrsPBAColl']
 })
 
-// TODO: add real code to convert groups (which is an object) into an array like below
-// This array should have a lot more elements.
-//var counts = [{"name": "AS","count": 3237},
-//    {"name": "BU","count": 378},
-//    {"name": "EB","count": 139},
-//    {"name": "EN","count": 573}]
-
-var counts = _.mapValues(groups, function(d){
-    return d.length
+var counts = _.map(groups, function(d, key) {
+    var new_obj = {}
+    new_obj.name = key
+    new_obj.count = _.size(d)
+    return new_obj
 })
+
 
 console.log(counts)
 
@@ -40,27 +37,31 @@ function computeX(d, i) {
     return i*20
 }
 
-function computeHeight(d, i) {
-    return d.count
+function computeHeight(d, i, data) {
+    var obj = _.max(data,'count') 
+    return d.count * (300/obj.count)
 }
 
 function computeWidth(d, i) {
-    return 20 * i + 100
+    return 20 
 }
 
-function computeY(d, i) {
-    return 20 * i
+function computeY(d, i,data) {
+    return 300 - computeHeight(d,i,data)
 }
 
 function computeColor(d, i) {
     return 'red'
 }
 
-var viz = _.map(counts, function(d, i){
+
+
+var viz = _.map(counts, function(d, i, data){
+ 
             return {
                 x: computeX(d, i),
-                y: computeY(d, i),
-                height: computeHeight(d, i),
+                y: computeY(d, i,data),
+                height: computeHeight(d, i, data),
                 width: computeWidth(d, i),
                 color: computeColor(d, i)
             }
@@ -75,9 +76,9 @@ return result.join('\n')
 
 {% template %}
 
-<rect x="0"
+<rect x="${d.x}"
       y="${d.y}"
-      height="20"
+      height="${d.height}"
       width="${d.width}"
       style="fill:${d.color};
              stroke-width:3;

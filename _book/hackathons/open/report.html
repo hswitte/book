@@ -54,7 +54,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.5.2" data-basepath="../.." data-revision="Wed Sep 30 2015 18:33:41 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="2.5.2" data-basepath="../.." data-revision="Fri Oct 02 2015 21:06:36 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -1074,6 +1074,179 @@ var result = _.map(viz, function(d){
          return template({d: d})
      })
 return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Console<div style="border:1px solid #eee; margin-bottom: 5px;"><span style="font-size:10px;line-height:11px;" class="inspect">       [{&quot;x&quot;:0,&quot;y&quot;:0,&quot;height&quot;:20,&quot;width&quot;:232.670137,&quot;color&quot;:&quot;green&quot;,&quot;label&quot;:&quot;Large: $232670137&quot;},{&quot;x&quot;:0,&quot;y&quot;:20,&quot;height&quot;:20,&quot;width&quot;:134.141021,&quot;color&quot;:&quot;green&quot;,&quot;label&quot;:&quot;Medium: $134141021&quot;},{&quot;x&quot;:0,&quot;y&quot;:40,&quot;height&quot;:20,&quot;width&quot;:58.697368,&quot;color&quot;:&quot;green&quot;,&quot;label&quot;:&quot;Small: $58697368&quot;}]</span></div></div></div><p></p>
+<p></p><h2> <span class="text">What are the condition:precipitation when birdstrike occur?</span><a href="#top" style="font-size: 14px; float: right;">[top]</a></h2><div class="lodashexercise">   <a name="foo">   </a><div class="output">       <div class="section-title">Viz<svg width="100%" height="400"><rect x="120" y="20" height="20" width="58.53333333333333" style="fill:red;
+                 stroke-width:3;
+                 stroke:rgb(0,0,0)"/>
+    <text transform="translate(0 35)">Fog</text>
+<rect x="120" y="40" height="20" width="327.10499999999996" style="fill:red;
+                 stroke-width:3;
+                 stroke:rgb(0,0,0)"/>
+    <text transform="translate(0 55)">None</text>
+<rect x="120" y="60" height="20" width="185.06666666666666" style="fill:red;
+                 stroke-width:3;
+                 stroke:rgb(0,0,0)"/>
+    <text transform="translate(0 75)">Rain</text>
+<rect x="120" y="80" height="20" width="19.1" style="fill:red;
+                 stroke-width:3;
+                 stroke:rgb(0,0,0)"/>
+    <text transform="translate(0 95)">Snow</text>
+<rect x="120" y="100" height="20" width="17.3" style="fill:red;
+                 stroke-width:3;
+                 stroke:rgb(0,0,0)"/>
+    <text transform="translate(0 115)">Fog, Rain</text>
+<rect x="120" y="120" height="20" width="0.6000000000000001" style="fill:red;
+                 stroke-width:3;
+                 stroke:rgb(0,0,0)"/>
+    <text transform="translate(0 135)">Fog, Snow</text>
+<rect x="120" y="140" height="20" width="1.3" style="fill:red;
+                 stroke-width:3;
+                 stroke:rgb(0,0,0)"/>
+    <text transform="translate(0 155)">Rain, Snow</text>
+<rect x="120" y="160" height="20" width="0.4" style="fill:red;
+                 stroke-width:3;
+                 stroke:rgb(0,0,0)"/>
+    <text transform="translate(0 175)">Fog, Rain, Snow</text></svg></div></div><div class="output"><div class="section-title">                <pre><code>&lt;rect x=&quot;120&quot;
+          y=&quot;20&quot;
+          height=&quot;20&quot;
+          width=&quot;58.53333333333333&quot;
+          style=&quot;fill:red;
+                 stroke-width:3;
+                 stroke:rgb(0,0,0)&quot; /&gt;
+    &lt;text transform=&quot;translate(0 35)&quot;&gt;Fog&lt;/text&gt;
+&lt;rect x=&quot;120&quot;
+          y=&quot;40&quot;
+          height=&quot;20&quot;
+          width=&quot;327.10499999999996&quot;
+          style=&quot;fill:red;
+                 stroke-width:3;
+                 stroke:rgb(0,0,0)&quot; /&gt;
+    &lt;text transform=&quot;translate(0 55)&quot;&gt;None&lt;/text&gt;
+&lt;rect x=&quot;120&quot;
+          y=&quot;60&quot;
+          height=&quot;20&quot;
+          width=&quot;185.06666666666666&quot;
+          style=&quot;fill:red;
+                 stroke-width:3;
+                 stroke:rgb(0,0,0)&quot; /&gt;
+    &lt;text transform=&quot;translate(0 75)&quot;&gt;Rain&lt;/text&gt;
+&lt;rect x=&quot;120&quot;
+          y=&quot;80&quot;
+          height=&quot;20&quot;
+          width=&quot;19.1&quot;
+          style=&quot;fill:red;
+                 stroke-width:3;
+                 stroke:rgb(0,0,0)&quot; /&gt;
+    &lt;text transform=&quot;translate(0 95)&quot;&gt;Snow&lt;/text&gt;
+&lt;rect x=&quot;120&quot;
+          y=&quot;100&quot;
+          height=&quot;20&quot;
+          width=&quot;17.3&quot;
+          style=&quot;fill:red;
+                 stroke-width:3;
+                 stroke:rgb(0,0,0)&quot; /&gt;
+    &lt;text transform=&quot;translate(0 115)&quot;&gt;Fog, Rain&lt;/text&gt;
+&lt;rect x=&quot;120&quot;
+          y=&quot;120&quot;
+          height=&quot;20&quot;
+          width=&quot;0.6000000000000001&quot;
+          style=&quot;fill:red;
+                 stroke-width:3;
+                 stroke:rgb(0,0,0)&quot; /&gt;
+    &lt;text transform=&quot;translate(0 135)&quot;&gt;Fog, Snow&lt;/text&gt;
+&lt;rect x=&quot;120&quot;
+          y=&quot;140&quot;
+          height=&quot;20&quot;
+          width=&quot;1.3&quot;
+          style=&quot;fill:red;
+                 stroke-width:3;
+                 stroke:rgb(0,0,0)&quot; /&gt;
+    &lt;text transform=&quot;translate(0 155)&quot;&gt;Rain, Snow&lt;/text&gt;
+&lt;rect x=&quot;120&quot;
+          y=&quot;160&quot;
+          height=&quot;20&quot;
+          width=&quot;0.4&quot;
+          style=&quot;fill:red;
+                 stroke-width:3;
+                 stroke:rgb(0,0,0)&quot; /&gt;
+    &lt;text transform=&quot;translate(0 175)&quot;&gt;Fog, Rain, Snow&lt;/text&gt;</code></pre></div></div><div class="section-title">Solution: SVG Template<pre><code>&lt;rect x=&quot;120&quot;
+          y=&quot;${d.y}&quot;
+          height=&quot;20&quot;
+          width=&quot;${d.width}&quot;
+          style=&quot;fill:${d.color};
+                 stroke-width:3;
+                 stroke:rgb(0,0,0)&quot; /&gt;
+    &lt;text transform=&quot;translate(0 ${d.ty})&quot;&gt;${d.label}&lt;/text&gt;</code></pre></div><div class="section-title">Solution: Javascript</div><pre><code>var group = _.groupBy(data,function(n){
+  return n[&apos;Conditions: Precipitation&apos;]
+})
+
+var gro = _.mapValues(group,function(d){
+  return d.length
+})
+
+var newgroup = _.map(gro, function(v,k){
+  return {&quot;conditions&quot;: k, &quot;numbers&quot;:v}
+})
+
+_.remove(newgroup,function(value){
+  return value.conditions == &apos;&apos;
+})
+
+console.log(newgroup)
+
+// TODO: modify the code below to produce a nice vertical bar charts
+
+function computeX(d, i) {
+    return 50
+}
+
+function computeHeight(d, i) {
+    return 20
+}
+
+function computeWidth(d, i) {
+    if(d.numbers &gt; 40000){
+      return d.numbers * (300 / 40000)
+    }else if(d.numbers &gt; 800 &amp;&amp; d.numbers &lt; 3000) {
+      return d.numbers * (200/ 3000)
+    }else if(d.numbers &lt; 200) {
+      return d.numbers * (200/2000)
+  }
+}
+
+function computeY(d, i) {
+    return i * 20 + 20
+}
+
+function computeYText(d,i) {
+  return i * 20 + 35
+}
+
+function computeColor(d, i) {
+    return &apos;red&apos;
+}
+
+function computeLabel(d,i) {
+    return d.conditions
+}
+
+var viz = _.map(newgroup, function(d, i){
+            return {
+                x: computeX(d, i),
+                y: computeY(d, i),
+                ty: computeYText(d,i),
+                height: computeHeight(d, i),
+                width: computeWidth(d, i),
+                color: computeColor(d, i),
+                label: computeLabel(d,i)
+            }
+         })
+console.log(viz)
+
+var result = _.map(viz, function(d){
+         // invoke the compiled template function on each viz data
+         return template({d: d})
+     })
+return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Console<div style="border:1px solid #eee; margin-bottom: 5px;"><span style="font-size:10px;line-height:11px;" class="inspect">       [{&quot;conditions&quot;:&quot;Fog&quot;,&quot;numbers&quot;:878},{&quot;conditions&quot;:&quot;None&quot;,&quot;numbers&quot;:43614},{&quot;conditions&quot;:&quot;Rain&quot;,&quot;numbers&quot;:2776},{&quot;conditions&quot;:&quot;Snow&quot;,&quot;numbers&quot;:191},{&quot;conditions&quot;:&quot;Fog, Rain&quot;,&quot;numbers&quot;:173},{&quot;conditions&quot;:&quot;Fog, Snow&quot;,&quot;numbers&quot;:6},{&quot;conditions&quot;:&quot;Rain, Snow&quot;,&quot;numbers&quot;:13},{&quot;conditions&quot;:&quot;Fog, Rain, Snow&quot;,&quot;numbers&quot;:4}]</span></div><div style="border:1px solid #eee; margin-bottom: 5px;"><span style="font-size:10px;line-height:11px;" class="inspect">       [{&quot;x&quot;:50,&quot;y&quot;:20,&quot;ty&quot;:35,&quot;height&quot;:20,&quot;width&quot;:58.53333333333333,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Fog&quot;},{&quot;x&quot;:50,&quot;y&quot;:40,&quot;ty&quot;:55,&quot;height&quot;:20,&quot;width&quot;:327.10499999999996,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;None&quot;},{&quot;x&quot;:50,&quot;y&quot;:60,&quot;ty&quot;:75,&quot;height&quot;:20,&quot;width&quot;:185.06666666666666,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Rain&quot;},{&quot;x&quot;:50,&quot;y&quot;:80,&quot;ty&quot;:95,&quot;height&quot;:20,&quot;width&quot;:19.1,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Snow&quot;},{&quot;x&quot;:50,&quot;y&quot;:100,&quot;ty&quot;:115,&quot;height&quot;:20,&quot;width&quot;:17.3,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Fog, Rain&quot;},{&quot;x&quot;:50,&quot;y&quot;:120,&quot;ty&quot;:135,&quot;height&quot;:20,&quot;width&quot;:0.6000000000000001,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Fog, Snow&quot;},{&quot;x&quot;:50,&quot;y&quot;:140,&quot;ty&quot;:155,&quot;height&quot;:20,&quot;width&quot;:1.3,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Rain, Snow&quot;},{&quot;x&quot;:50,&quot;y&quot;:160,&quot;ty&quot;:175,&quot;height&quot;:20,&quot;width&quot;:0.4,&quot;color&quot;:&quot;red&quot;,&quot;label&quot;:&quot;Fog, Rain, Snow&quot;}]</span></div></div></div><p></p>
 
                     
                     </section>
