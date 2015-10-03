@@ -56,7 +56,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.7.2" data-basepath="../.." data-revision="Wed Sep 30 2015 18:33:41 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.7.2" data-basepath="../.." data-revision="Fri Oct 02 2015 21:06:36 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -968,9 +968,130 @@ Read the documentation to figure out what command to run: <a href="http://docs.m
 <pre><code>    db.listings.find({&quot;n&quot;:&quot;com.evernote&quot;}).pretty()
 </code></pre><p>The goal is to be able to see something like below in the terminal.</p>
 <p><img src="query.png" alt="screenshot"></p>
+<p><img src="heather_mongo.png" alt="heather"></p>
 <p>(Replace this screenshot with a screenshot of each individual&apos;s own computer.
  Include the entire desktop in the screenshot so we can know this screenshot
  does belong to an individual)</p>
+<h2 id="data">Data</h2>
+<h2 id="example">Example:</h2>
+<p>MongoDB documents are analogous to JSON objects. Below is an example of a document in our MongoDB collection.</p>
+<pre><code class="lang-javascript">{
+        <span class="hljs-string">&quot;_id&quot;</span>: <span class="hljs-string">&quot;56044593703498dd2a528ce6&quot;</span>,
+        <span class="hljs-string">&quot;cadd&quot;</span>: <span class="hljs-string">&quot;305 Walnut Street\nRedwood City, CA 94063&quot;</span>,
+        <span class="hljs-string">&quot;cat&quot;</span>: <span class="hljs-string">&quot;Productivity&quot;</span>,
+        <span class="hljs-string">&quot;crat&quot;</span>: <span class="hljs-string">&quot;Everyone&quot;</span>,
+        <span class="hljs-string">&quot;crt&quot;</span>: <span class="hljs-string">&quot;Evernote Corporation&quot;</span>,
+        <span class="hljs-string">&quot;curl&quot;</span>: <span class="hljs-string">&quot;/store/apps/developer?id=Evernote+Corporation&quot;</span>,
+        <span class="hljs-string">&quot;dct&quot;</span>: <span class="hljs-number">100000000</span>,
+        <span class="hljs-string">&quot;desc&quot;</span>: <span class="hljs-string">&quot;Evernote is the modern workspace that syncs between all of your devices. Work everywhere and stay productive: &#x2022; Write notes, checklists, and research &#x2022; Organize web articles, docs, and photos  &#x2022; Discuss your work with others, right within the app ---  &#x201C;When it comes to taking all manner of notes and getting work done, Evernote is an indispensable tool.&#x201D; &#x2013; PC Mag --- 100 million people use it to move projects forward: WRITE &amp; ORGANIZE &#x2022; Stay focused: write in an uncluttered workspace &#x2022; Get things done: make to-do&apos;s and checklists &#x2022; Attach files: keep Office docs, PDFs, and photos &#x2022; Get organized: notebooks and tags keep work tidy &#x2022; Find anything: searchable text in notes and photos  DISCUSS &amp; COLLABORATE &#x2022; Work chat: discuss notes without leaving the app &#x2022; Work together: share notebooks for team projects &#x2022; Meeting prep: create agendas and action items YOUR DIGITAL ASSISTANT &#x2022; Make connections: turn biz cards into contacts  &#x2022; Track expenses: organize receipts, bills &amp; invoices &#x2022; Plan travel: save research and reservations ACCOMPLISH EVEN MORE WITH EVERNOTE PREMIUM Evernote is free to download and use. Evernote Premium unlocks even more productivity: &#x2605; Offline access - work anywhere, even without a connection &#x2605; More space - get more done with 10 GB of new uploads each month &#x2605; Better search - search inside Office docs and attachments &#x2605; Greater privacy - add a passcode lock on mobile &#x2605; PDF annotation - use shapes and comments to give visual feedback &#x2605; Unlimited business card scans - scan biz cards, save to contacts, and connect on LinkedIn  Two subscription levels: 1) Evernote Premium 2) Evernote Plus --- \&quot;Use Evernote as the place you put everything...don&#x2019;t ask yourself which device it&#x2019;s on&#x2014;it&#x2019;s in Evernote\&quot; &#x2013; The New York Times --- Price may vary by location. Subscriptions will be charged to your credit card through your Google Play account. Your subscription will automatically renew unless canceled at least 24 hours before the end of the current period. You will not be able to cancel the subscription once activated. Manage your subscriptions in Account Settings after purchase.&quot;</span>,
+        <span class="hljs-string">&quot;dtp&quot;</span>: <span class="hljs-string">&quot;September 22, 2015&quot;</span>,
+        <span class="hljs-string">&quot;dtxt&quot;</span>: <span class="hljs-string">&quot;100,000,000 - 500,000,000&quot;</span>,
+        <span class="hljs-string">&quot;id&quot;</span>: <span class="hljs-string">&quot;com.evernote-5432&quot;</span>,
+        <span class="hljs-string">&quot;n&quot;</span>: <span class="hljs-string">&quot;com.evernote&quot;</span>,
+        <span class="hljs-string">&quot;new&quot;</span>: <span class="hljs-string">&quot;Bug fixes and miscellaneous improvements&quot;</span>,
+        <span class="hljs-string">&quot;os&quot;</span>: <span class="hljs-string">&quot;Varies with device&quot;</span>,
+        <span class="hljs-string">&quot;pri&quot;</span>: <span class="hljs-string">&quot;Free&quot;</span>,
+        <span class="hljs-string">&quot;purl&quot;</span>: <span class="hljs-string">&quot;https://www.google.com/url?q=http://evernote.com/privacy/&amp;sa=D&amp;usg=AFQjCNHTyefT6GQ6A6mnOKPeqKUA_qjesg&quot;</span>,
+        <span class="hljs-string">&quot;rate&quot;</span>: <span class="hljs-number">4.6</span>,
+        <span class="hljs-string">&quot;rct&quot;</span>: <span class="hljs-number">1313925</span>,
+        <span class="hljs-string">&quot;sz&quot;</span>: <span class="hljs-string">&quot;Varies with device&quot;</span>,
+        <span class="hljs-string">&quot;t&quot;</span>: <span class="hljs-string">&quot;Evernote&quot;</span>,
+        <span class="hljs-string">&quot;verc&quot;</span>: <span class="hljs-string">&quot;5432&quot;</span>
+    }
+</code></pre>
+<h2 id="collection-fields">Collection Fields</h2>
+<p>MongoDB stores all field names in every document and this consumes disk space; hence, we use short field names.
+The following table shows the short field names used in our MongoDB documents and their meanings.</p>
+<table>
+<thead>
+<tr>
+<th>short name</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>a unique field required in every MongoDB document</td>
+</tr>
+<tr>
+<td>cadd</td>
+<td>creator address</td>
+</tr>
+<tr>
+<td>cat</td>
+<td>store category</td>
+</tr>
+<tr>
+<td>crat</td>
+<td>content rating</td>
+</tr>
+<tr>
+<td>crt</td>
+<td>creator/developer</td>
+</tr>
+<tr>
+<td>curl</td>
+<td>creator url</td>
+</tr>
+<tr>
+<td>dct</td>
+<td>minimum download count</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>description</td>
+</tr>
+<tr>
+<td>dtp</td>
+<td>date published</td>
+</tr>
+<tr>
+<td>dtxt</td>
+<td>download range in text</td>
+</tr>
+<tr>
+<td>id</td>
+<td>app id</td>
+</tr>
+<tr>
+<td>n</td>
+<td>app package name</td>
+</tr>
+<tr>
+<td>new</td>
+<td>what is new in this app version</td>
+</tr>
+<tr>
+<td>os</td>
+<td>Android version</td>
+</tr>
+<tr>
+<td>pri</td>
+<td>price</td>
+</tr>
+<tr>
+<td>purl</td>
+<td>privacy statement url</td>
+</tr>
+<tr>
+<td>rate</td>
+<td>star rating</td>
+</tr>
+<tr>
+<td>rct</td>
+<td>star rating count (How many users have rated this app)</td>
+</tr>
+<tr>
+<td>sz</td>
+<td>app size</td>
+</tr>
+<tr>
+<td>verc</td>
+<td>version code</td>
+</tr>
+</tbody>
+</table>
 
                     
                     </section>
